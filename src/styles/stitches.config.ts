@@ -6,5 +6,4 @@ export const { styled, css, globalCss, getCssText } = createStitches({
       lg: '(min-width: 1024px)'
     }
   })
-
-  export const myTheme = createTheme({})
+  // export const myTheme = createTheme({})

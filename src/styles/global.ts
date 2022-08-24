@@ -5,6 +5,11 @@ export const globalStyles = globalCss({
     margin: 0,
     padding: 0,
     boxSizing: 'border-box',
-    // backgroundColor: 'Green',
+    scrollbarWidth: 'none', 
+    overflowX: 'hidden', 
   },
+  
+  body:{
+     height:'100vh',
+  }
 })

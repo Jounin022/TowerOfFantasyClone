@@ -11,9 +11,15 @@ interface OptionProps {
 }
 
 export const Option = (props: OptionProps) => {
-  const [active,setActive] = useState<boolean>(false)
+  const [active, setActive] = useState<boolean>(false);
+
   return (
-    <S.li onMouseOver={()=>setActive(true)} onMouseOut={()=>setActive(false)} onClick={() => props.action()}>
+    <S.li
+      css={{"&::after": {width: props.w}}}
+      onMouseOver={() => setActive(true)}
+      onMouseOut={() => setActive(false)}
+      onClick={() => props.action()}
+    >
       <Image
         height={props.h}
         width={props.w}

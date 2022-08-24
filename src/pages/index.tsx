@@ -1,13 +1,16 @@
 import type { NextPage } from "next";
 import DeviceIndicator from "../components/displayIndicator";
 import Navbar from "../components/navbar";
-const Home: NextPage = () => {
+import Home from "../components/articles/home";
+const ToFSPA: NextPage = () => {
   return (
     <>
       <Navbar />
+      <Home/>
+      {/* <Home/> */}
       <DeviceIndicator />
     </>
   );
 };
 
-export default Home;
+export default ToFSPA;

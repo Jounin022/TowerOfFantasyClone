@@ -1,27 +1,26 @@
 import { styled } from "../../styles/stitches.config";
-import topBar from "../../styles/assets/images/general/navigationBar/top.png";
 
 export const navbar = styled("nav", {
   width: "100%",
   height: "7vw",
-  backgroundImage: `url(${topBar.src})`,
+  backgroundImage: `url('/assets/images/general/navigationBar/top.png')`,
   display: "flex",
   position: "fixed",
   backgroundRepeat: "no-repeat",
   backgroundSize: "100% 100%",
+  zIndex:10,
   variants: {
-    color: {
+    device: {
       cellphone: {
-        // backgroundColor: 'Green'
-        display: "none",
+        opacity: 0,
+        transition: '1s ',
       },
       tablet: {
-        display: "block",
-        // backgroundColor: 'Red'
+        opacity: 0,
       },
       desktop: {
-        display: "block",
-        // backgroundColor: 'Blue'
+        opacity: 1,
+        transition: '1s ',
       },
     },
   },

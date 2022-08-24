@@ -8,6 +8,7 @@ const Style = styled("nav", {
   backgroundSize: "cover",
   backgroundPositionX: "center",
   backgroundRepeat: "no-repeat",
+  boxShadow: '3px -5px 2px 5px rgba(0, 100, 22, 0.1) , 3px -9px 0px  6px rgba(0, 100, 0, 0.05)',
   variants: {
     device: {
       cellphone: {
