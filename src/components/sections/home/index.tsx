@@ -2,7 +2,7 @@ import * as S from "./home.styles";
 
 export const Home = () => {
   return (
-    <S.background>
+    <S.background id="section-1">
       <S.message device={{ "@sm": "cellphone", "@md": "tablet_desktop" }}/>
       <S.video
         device={{ "@sm": "cellphone_tablet", "@lg": "desktop" }}

@@ -28,6 +28,7 @@ position: 'relative',
 backgroundRepeat:"no-repeat",
 objectFit:'contain',
 display: 'flex',
+
 })          
 
 
