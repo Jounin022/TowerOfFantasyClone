@@ -26,10 +26,12 @@ export const navbar = styled("nav", {
   },
 });
 
-export const logo = styled('div', {
+export const logo = styled('figure', {
   width: "15vw",
   height: "5vw",
   position: "relative",
+  display: 'block',
+  margin:0,
 }); 
 
 export const ul = styled('ul', {

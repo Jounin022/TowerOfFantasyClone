@@ -13,6 +13,7 @@ const Navbar = () => {
           layout="fill"
           objectFit="contain"
         />
+        <figcaption hidden>Logo from tower of fantasy</figcaption>
       </S.logo>
 
       <S.ul position='left'>                                 {/* Lista da direita */}  
