@@ -3,12 +3,12 @@ type activePageType = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
 interface sectionInterface {
   activePage: number;
-  setActivePage: (page: activePageType) => void;
+  setActivePage: (page: number) => void;
 }
 export const SectionContext = createContext({} as sectionInterface);
 
 export const SectionProvider = ({ children }: any) => {
-  const [activePage, setActivePage] = useState<activePageType>(1);
+  const [activePage, setActivePage] = useState<number>(1);
 
   useEffect(() =>{
       let element = document.getElementById(`section-${activePage}`)

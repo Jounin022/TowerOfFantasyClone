@@ -2,12 +2,8 @@ import { styled } from "../../styles/stitches.config";
 
 export const navbar = styled("nav", {
   width: "100%",
-  height: "7vw",
-  backgroundImage: `url('/assets/images/general/navigationBar/top.png')`,
   display: "flex",
   position: "fixed",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "100% 100%",
   zIndex:10,
   variants: {
     device: {
@@ -19,6 +15,11 @@ export const navbar = styled("nav", {
         opacity: 0,
       },
       desktop: {
+        flexDirection: 'row',
+        backgroundSize: "100% 100%",
+        backgroundRepeat: "no-repeat",
+        backgroundImage: `url('/assets/images/general/navigationBar/top.png')`,
+        height: "7vw",
         opacity: 1,
         transition: '1s ',
       },
@@ -52,5 +53,6 @@ variants:{
       left: '67vw',
     }
   }
+  
 }
 }); 

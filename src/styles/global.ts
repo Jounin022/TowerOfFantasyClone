@@ -6,12 +6,22 @@ export const globalStyles = globalCss({
     padding: 0,
     boxSizing: 'border-box',
     scrollbarWidth: 'none', 
-    overflowX: 'hidden', 
     backgroundColor:'#333',
-  
   },
   
+//   '*':{
+// scrollbarWidth:'thin',
+//   },
+
+  "@font-face":{
+    src: `url('/asset/fonts/Oxanium-Bold.ttf')`,
+    fontFamily: 'Oxanium',
+    fontWeight: 400,
+    fontStyle: 'normal',
+   },
+   
   body:{
      height:'100vh',
-  }
+  },
+
 })

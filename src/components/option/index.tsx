@@ -9,7 +9,7 @@ interface OptionProps {
   isActive?: boolean;
   action: () => void;
   alt?: string;
-  in?:"topBar" | "sideBar";
+  in?:"topBar" | "sideBar" | "sideBarTop" | "sideBarBottom" | "topBarRight";
 }
 
 export const Option = (props: OptionProps) => {

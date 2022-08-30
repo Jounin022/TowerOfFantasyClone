@@ -1,23 +1,37 @@
 import { styled } from "../../styles/stitches.config"
+import { Option } from "../option"
 
 export const aside = styled('aside',{
 backgroundImage: `url('/assets/images/general/sidePagination/scrollBox.png')`,
 backgroundRepeat: 'no-repeat',
-backgroundSize: 'cover',
-backgroundPosition: 'center',
-width: 37,
-height: 140,
+backgroundSize: 'contain',
+width: 50,
+height: 180,
 position: "fixed",
-display: "flex",
 justifyContent: "center",
 alignItems: "center",
-top: 250,
-right: 30,
-zIndex:10
+overflow: 'hidden',
+flexDirection: 'column',
+top: "40%",
+right: 10,
+zIndex:10,
+variants:{
+device:{
+    cellphone_tablet:{
+        display: 'none',
+    },
+    desktop:{
+        display: 'flex',
+    },
+}
+}
 })
 
 export const ul = styled('ul',{
     display: "flex",
     flexDirection: "column",
-    gap:'50px' ,
+    gap:'40px' ,
+    position: "relative",
+    right: 20,
+    transition: "all 500ms",
 })

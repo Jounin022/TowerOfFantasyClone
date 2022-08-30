@@ -1,55 +1,54 @@
 import * as S from "./aside.styles";
-import * as Images from "./images";
 import { Option } from "../option";
 import { useSection } from "../../hooks/useSection";
+import { NavOptionsArr } from "../../utils/navigation/index";
+
+import ActiveTop from "../../../public/assets/images/general/sidePagination/scroll-prev.png";
+import InactiveTop from "../../../public/assets/images/general/sidePagination/prev-gray.png";
+import ActiveBottom from "../../../public/assets/images/general/sidePagination/scroll-next.png";
+import InactiveBottom from "../../../public/assets/images/general/sidePagination/next-gray.png";
 
 export const Aside = () => {
-  const { activePage , setActivePage} = useSection();
+  // window.addEventListener("scroll", (event) => {
+  // event.preventDefault();
+  // event.target.scrollTop 
+  // })
+  const { activePage, setActivePage } = useSection();
   return (
-    <S.aside>
-      <S.ul>
-        <Option
-          activeImg={Images.Active01}
-          inactiveImg={Images.Inactive01}
-          alt="page one button"
-          in="sideBar"
-          isActive={activePage === 1}
-          action={() => setActivePage(1)}
-          />
-        <Option
-          activeImg={Images.Active02}
-          inactiveImg={Images.Inactive02}
-          alt="page one button"
-          in="sideBar"
-          isActive={activePage === 2}
-          action={() => setActivePage(2)}
-          />
-        <Option
-          activeImg={Images.Active03}
-          inactiveImg={Images.Inactive03}
-          alt="page one button"
-          in="sideBar"
-          isActive={activePage === 3}
-          action={() => setActivePage(3)}
-          />
-        <Option
-          activeImg={Images.Active04}
-          inactiveImg={Images.Inactive04}
-          alt="page one button"
-          in="sideBar"
-          isActive={activePage === 4}
-          action={() => setActivePage(4)}
-          />
-        <Option
-          activeImg={Images.Active05}
-          inactiveImg={Images.Inactive05}
-          alt="page one button"
-          in="sideBar"
-          isActive={activePage === 5}
-          action={() => setActivePage(5)}
-        />
-  
+    <S.aside device={{ "@sm": "cellphone_tablet", "@lg": "desktop" }}>
+      <Option
+        action={() => setActivePage(activePage > 1 ? activePage - 1 : 1 )}
+        activeImg={ActiveTop}
+        inactiveImg={InactiveTop}
+        isActive={activePage > 1}
+        in="sideBarTop"
+        alt="Go previous page."
+      />
+      <S.ul css={{ transform: `translateY(${245 + activePage * -70}px)` }}>
+        {NavOptionsArr.map((options) => {
+          return (
+            <Option
+              key={options.page}
+              activeImg={options.activeNumber}
+              inactiveImg={options.inactiveNumber}
+              alt={options.alt}
+              in="sideBar"
+              w={30}
+              h={30}
+              isActive={activePage === options.page}
+              action={() => setActivePage(options.page)}
+            />
+          );
+        })}
       </S.ul>
+      <Option
+        action={() => setActivePage(activePage < 6 ? activePage + 1 : 6 )}
+        activeImg={ActiveBottom}
+        inactiveImg={InactiveBottom}
+        isActive={activePage < 6}
+        in="sideBarBottom"
+        alt="Go previous page."
+      />
     </S.aside>
   );
 };
