@@ -7,6 +7,17 @@ export const globalStyles = globalCss({
     boxSizing: 'border-box',
     scrollbarWidth: 'none', 
     backgroundColor:'#333',
+    // overflo
+    "&::-webkit-scrollbar":{
+      display:'none',
+    },
+    // "&::-webkit-scrollbar":{
+    //   display:'none',
+    // },
+    // overflow: 'hidden',
+    // scrollbarColor:"green",
+    scroll:"green",
+
   },
   
 //   '*':{

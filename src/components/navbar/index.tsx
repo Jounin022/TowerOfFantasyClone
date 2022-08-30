@@ -16,7 +16,7 @@ const firstListOptions = NavOptionsArr.filter((option) => {
   }
 });
 
-const Navbar = () => {
+export const Navbar = () => {
   const { activePage, setActivePage } = useSection();
 
   const isThirdOpt = (activePage: number, page: number)=>{
@@ -76,5 +76,3 @@ const Navbar = () => {
     </S.navbar>
   );
 };
-
-export default Navbar;

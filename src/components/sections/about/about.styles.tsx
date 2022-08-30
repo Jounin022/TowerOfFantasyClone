@@ -1,9 +1,11 @@
 import { styled, keyframes } from "../../../styles/stitches.config";
-import Image from "next/image"
+
 const rotate = keyframes({
-  "0%": { transform: "rotate(0deg)" },
-  "50%": { transform: "rotate(360deg)" },
-  "100%": { transform: "rotate(720deg)" },
+  "100%": { transform: "rotate(360deg)" },
+});
+
+const rotateBack = keyframes({
+  "100%": { transform: "rotate(-360deg)" },
 });
 
 const slide = keyframes({
@@ -26,7 +28,7 @@ export const background = styled("section", {
     device: {
       cellphone: {
         backgroundImage: `url('/assets/images/page3/p3-top.png')`,
-        backgroundSize: "100% ",
+        backgroundSize: "100%",
       },
       tablet: {},
       desktop: {
@@ -92,6 +94,12 @@ export const floatingMainCircle = styled("div", {
   backgroundRepeat: "no-repeat",
   backgroundSize: "100% 100%",
   transform: "translateX(70%)",
+  "&:active":{
+    "&:after":{
+      animation: `${rotate} 0.3s linear infinite`,
+      transition:"all 500ms",
+      },
+  },
   "&:after": {
     animation: `${rotate} 3s infinite`,
     backgroundImage: `url('/assets/images/page3/p3-rotate1.png')`,
@@ -111,16 +119,83 @@ export const rotatingCircles = styled("div", {
   backgroundSize: "190vw 190vw",
   width: "190vw",
   height: "190vw",
-  top: "23vw",
-  left: -140,
+ 
   position: "absolute",
   zIndex: 1,
-  "&:active":{
-    backgroundColor: "black",
+  animation: `${rotate} 20s linear infinite `,
+  "&:after": {
+    width: "190vw",
+    height: "190vw",
+    animation: `${rotateBack} 15s infinite`,
+    backgroundImage: `url('/assets/images/page3/p3-circle6.png')`,
+    backgroundSize: "100% 100%",
+    content: "",
+    position: "absolute",
   },
-  animation: `${rotate} 17s infinite `,
+  "&:before": {
+    width: "190vw",
+    height: "190vw",
+    animation: `${rotate} 30s linear infinite`,
+    backgroundImage: `url('/assets/images/page3/p3-circle2.png')`,
+    opacity:0.5,
+    backgroundSize: "100% 100%",
+    content: "",
+    position: "absolute",
+  },
+  variants: {
+    device:{
+      cellphone: {
+        top: "23vw",
+        left: -140,
+      },
+      tablet: {
+        top: "21vw",
+        left: -200,
+      },
+      desktop: {
+  
+      }
+    }
+  }
 });
 
+export const title = styled("div",{
+display: "flex",
+position: "absolute",
+width: 100,
+height: 100,
+backgroundRepeat: 'no-repeat',
+variants:{
+  device:{
+    cellphone:{
+      backgroundImage: `url('/assets/images/page2/p6-title-m.png')`,
+      backgroundSize:"100% 100%",
+      width: "260px",
+      height: "80px",
+      right: "auto",
+      left: 15,
+      top: "5%",
+    },
+    tablet:{
+      // backgroundImage: `url('/assets/images/page2/p6-title-m.png')`,
+      // width: "260px",
+      // height: "60px",
+      // right: "auto",
+      // left: 15,
+      // top: "5%",
+    },
+    desktop:{
+      // backgroundImage: `url('/assets/images/page2/p6-title-m.png')`,
+      // width: "260px",
+      // height: "60px",
+      // right: "auto",
+      // left: 15,
+      // top: "5%",
+    },
+   
+  }
+}
+})
 
 export const bottomBackground = styled("div", {
   backgroundImage: "url('/assets/images/page3/p3-bottom.png')",
@@ -135,7 +210,6 @@ export const bottomBackground = styled("div", {
   justifyContent: "space-around",
   alignItems: "center",
   paddingLeft:'40px',
-  //   paddingRight:'20px',
 });
 
 export const cityOption = styled("button", {
@@ -148,31 +222,18 @@ export const cityOption = styled("button", {
   margin:0,
   zIndex: 2,
   transition: 'all 500ms ease-in-out',
-
   "&:before":{
-      transition: 'all 500ms ease-in-out',
+    transition: 'all 500ms ease-in-out',
     zIndex: 1,
     content:'',
     position:'absolute',
-    opacity: 0.5,
     transform: "translate(-50%, -50%)",
     backgroundRepeat: "no-repeat",
     backgroundSize: "100% 100%",
    },
 });
 
-// export const buttonCircle = styled(Image, {
-//   borderRadius:"100%",
-//   position: "absolute",
-//   zIndex: 1,
-//   transform: "translateX(-100%)",
-//   backgroundRepeat: "no-repeat",
-//   backgroundSize: "100% 100%",
-
-// });
-
 export const movingBackground = styled("div", {
-//   backgroundImage: "url('/assets/images/page3/discover1.jpg')",
   zIndex: -1,
   backgroundRepeat: "no-repeat",
   backgroundSize: "auto 100%",
@@ -181,6 +242,6 @@ export const movingBackground = styled("div", {
   bottom: 0,
   width: "100%",
   height: "95%",
-  backgroundColor: "green",
-  animation: `${slide} 12s infinite ease-in-out`,
+  backgroundColor: "#333",
+  animation: `${slide} 20s infinite ease-in-out`,
 });

@@ -10,6 +10,9 @@ export const background = styled("section", {
   justifyContent: "center",
   backgroundSize: "cover",
   overflow: "hidden",
+  defaultVariants:{
+   device:"cellphone",
+  },
   variants: {
     device: {
       cellphone: {
@@ -37,21 +40,24 @@ export const title = styled("div", {
         backgroundImage: `url('/assets/images/page2/p6-title-m.png')`,
         width: "260px",
         height: "60px",
-        left: 15,
         right: "auto",
+        left: 15,
         top: "5%",
       },
       tablet: {
-        backgroundImage: `url('/assets/images/page2/p6-title.png')`,
-        width: "550px",
-        height: "70px",
+        width: "350px",
+        height: "90px",
         left: "7%",
-        top: "13%",
-        opacity: "0%",
+        // opacity: "0%",
       },
       desktop: {
+        backgroundImage: `url('/assets/images/page2/p6-title.png')`,
+    
+        width: "550px",
+        height: "70px",
+        // top: "13%",
         opacity: "100%",
-        top: "13%",
+        top: "7%",
       },
     },
   },
@@ -103,8 +109,12 @@ export const li = styled('li',{
 export const article = styled('article',{
 position: "absolute",
 bottom: 20,
-overflow: "hidden",
+// overflow: "hidden",
+pointerEvents: "all",
 overflowY: "scroll",
+"&::-webkit-scrollbar":{
+  display:'none',
+},
 variants: {
   device:{
     cellphone: {

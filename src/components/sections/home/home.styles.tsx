@@ -8,7 +8,10 @@ top: '50%',
 transform: 'translate(-50%,-50%)',
 variants:{
     device: {
-        cellphone_tablet: {
+        cellphone: {
+          display: 'none',
+        },
+        tablet: {
           display: 'none',
         },
         desktop: {
@@ -49,12 +52,14 @@ export const message = styled('div',{
                 height: 500,
                 top:90,
             },
-            tablet_desktop: {  
+            tablet: {  
                 backgroundImage:`url('/assets/images/page1/home-tittle.png')`,
                 backgroundSize:'800px',
                 height: 100,
                 top:430,
-                
+            },
+            desktop: {
+
             },
     }
 }
@@ -76,10 +81,13 @@ variants: {
             backgroundSize:'100% ',
             height:'8vw',
         },
-        tablet_desktop: {  
+        tablet: {  
             backgroundImage:`url('/assets/images/page1/p1-bottom.png')`,
             backgroundSize:'100% 100%',
             height:'100vh',
+        },
+        desktop: {
+
         },
 }
 }

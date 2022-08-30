@@ -6,4 +6,6 @@ export const { styled, css, globalCss, getCssText ,keyframes ,config} = createSt
       lg: '(min-width: 1024px)'
     }
   })
+export const responsive:any = {device: { "@sm": "cellphone", "@md": "tablet", "@lg": "desktop"}}// as ComponentProps<S>
+
   // export const myTheme = createTheme({})

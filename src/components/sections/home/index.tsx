@@ -1,17 +1,18 @@
 import * as S from "./home.styles";
+import { responsive } from "../../../styles/stitches.config";
 
 export const Home = () => {
   return (
     <S.background id="section-1">
-      <S.message device={{ "@sm": "cellphone", "@md": "tablet_desktop" }}/>
+      <S.message {...responsive} />
       <S.video
-        device={{ "@sm": "cellphone_tablet", "@lg": "desktop" }}
+        {...responsive}
         src="/assets/videos/background-pg1.mp4"
         muted={true}
         autoPlay={true}
         loop={true}
       ></S.video>
-        <S.foot device={{ "@sm": "cellphone", "@md": "tablet_desktop" }}/>
+      <S.foot {...responsive} />
     </S.background>
   );
 };
