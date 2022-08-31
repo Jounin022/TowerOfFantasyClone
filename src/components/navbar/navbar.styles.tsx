@@ -5,16 +5,15 @@ export const navbar = styled("nav", {
   display: "flex",
   position: "fixed",
   zIndex:10,
-  variants: {
-    device: {
-      cellphone: {
+ 
+      '@mobile': {
         opacity: 0,
         transition: '1s ',
       },
-      tablet: {
+      "@tablet": {
         opacity: 0,
       },
-      desktop: {
+      "@desktop": {
         flexDirection: 'row',
         backgroundSize: "100% 100%",
         backgroundRepeat: "no-repeat",
@@ -23,8 +22,7 @@ export const navbar = styled("nav", {
         opacity: 1,
         transition: '1s ',
       },
-    },
-  },
+   
 });
 
 export const logo = styled('figure', {
@@ -48,6 +46,10 @@ variants:{
   position:{
     left:{
       left: '19vw',
+      "& li":{
+        alignSelf:"end",
+        marginBottom:"15px",
+      }
     },
     right:{
       left: '67vw',

@@ -12,19 +12,20 @@ justifyContent: "center",
 alignItems: "center",
 overflow: 'hidden',
 flexDirection: 'column',
-top: "40%",
+top: "30%",
 right: 10,
 zIndex:10,
-variants:{
-device:{
-    cellphone_tablet:{
+
+    "@mobile":{
         display: 'none',
     },
-    desktop:{
+    "@tablet":{
+        display: 'none',
+    },
+    "@desktop":{
         display: 'flex',
     },
-}
-}
+
 })
 
 export const ul = styled('ul',{

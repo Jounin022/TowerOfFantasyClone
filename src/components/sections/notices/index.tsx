@@ -1,21 +1,20 @@
 import * as S from "./notices.styles";
-import {responsive} from "../../../styles/stitches.config"
 
 export const Notices = () => {
   return (
-    <S.background id="section-2" {...responsive}>
-      <S.title {...responsive}/>
-      <S.panel {...responsive}>
-        <S.innerAside {...responsive}>
-          <S.button {...responsive}>NEWS</S.button>
-          <S.button {...responsive}>BULLETIN</S.button>
+    <S.background id="section-2">
+      <S.title/>
+      <S.panel>
+        <S.innerAside>
+          <S.button>NEWS</S.button>
+          <S.button>BULLETIN</S.button>
           <S.button>EVENT</S.button>
         </S.innerAside>
         
-        <S.article {...responsive}>
+        <S.article>
           <ul style={{ margin: "0px", padding: "0px" }}>
             <S.li>
-              <p>Perguntas frequentes do lançamento global ...</p> 2022.8.9{" "}
+              <p>Perguntas frequentes do lançamento global ...</p> 2022.8.9
             </S.li>
             <S.li>
               <p>Anúncio: Entrega de compras incompletas</p> 2022.8.15
@@ -39,39 +38,39 @@ export const Notices = () => {
         </S.article>
       </S.panel>
       
-      <S.twitter {...responsive}>
+      <S.twitter>
         <blockquote className="twitter-tweet">
           <p lang="en" dir="ltr">
-            1 DAY until the{" "}
+            1 DAY until the
             <a href="https://twitter.com/hashtag/TowerofFantasy?src=hash&amp;ref_src=twsrc%5Etfw">
               #TowerofFantasy
-            </a>{" "}
+            </a>
             official launch! ⏳<br />
             <br />
             It&#39;s happening TOMORROW!!!
             <a href="https://twitter.com/hashtag/ToFSignal?src=hash&amp;ref_src=twsrc%5Etfw">
               #ToFSignal
-            </a>{" "}
+            </a>
             <a href="https://twitter.com/hashtag/ToF?src=hash&amp;ref_src=twsrc%5Etfw">
               #ToF
-            </a>{" "}
+            </a>
             <a href="https://twitter.com/hashtag/Aug10?src=hash&amp;ref_src=twsrc%5Etfw">
               #Aug10
-            </a>{" "}
+            </a>
             <a href="https://t.co/OXwwADQu6W">pic.twitter.com/OXwwADQu6W</a>
           </p>
-          &mdash; Tower of Fantasy (@ToF_EN_Official){" "}
+          &mdash; Tower of Fantasy (@ToF_EN_Official)
           <a href="https://twitter.com/ToF_EN_Official/status/1557154767847075840?ref_src=twsrc%5Etfw">
             August 10, 2022
           </a>
-        </blockquote>{" "}
+        </blockquote>
         <script
           async
           src="https://platform.twitter.com/widgets.js"
           charSet="utf-8"
         ></script>
       </S.twitter>
-      <S.image {...responsive} />
+      <S.image />
     </S.background>
   );
 };

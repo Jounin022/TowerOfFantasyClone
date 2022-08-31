@@ -9,13 +9,9 @@ import ActiveBottom from "../../../public/assets/images/general/sidePagination/s
 import InactiveBottom from "../../../public/assets/images/general/sidePagination/next-gray.png";
 
 export const Aside = () => {
-  // window.addEventListener("scroll", (event) => {
-  // event.preventDefault();
-  // event.target.scrollTop 
-  // })
   const { activePage, setActivePage } = useSection();
   return (
-    <S.aside device={{ "@sm": "cellphone_tablet", "@lg": "desktop" }}>
+    <S.aside>
       <Option
         action={() => setActivePage(activePage > 1 ? activePage - 1 : 1 )}
         activeImg={ActiveTop}

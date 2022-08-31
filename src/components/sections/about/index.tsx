@@ -2,19 +2,18 @@ import * as S from "./about.styles";
 import { useState } from "react";
 import Image from "next/image";
 import hands from "../../../../public/assets/images/page3/p3-flash.png";
-import { responsive } from "../../../styles/stitches.config";
 export const About = () => {
   const [selectedCity, setSelectedCity] = useState(1);
   const b1 = selectedCity === 1 ? "p3-btn-after-a.png" : "p3-btn-bg.png";
   const b2 = selectedCity === 2 ? "p3-btn-after-a.png" : "p3-btn-bg.png";
   const b3 = selectedCity === 3 ? "p3-btn-after-a.png" : "p3-btn-bg.png";
   return (
-    <S.background id="section-3" {...responsive}>
-      <S.title {...responsive} />
-      <S.floatingMainCircle>
+    <S.background id="section-3">
+      <S.title />
+      <S.floatingMainCircle  >
         <Image alt="A.I.D.A symbol" src={hands} width={50} height={50} />
-      </S.floatingMainCircle>
-      <S.floatingTab {...responsive}>
+      </S.floatingMainCircle >
+      <S.floatingTab>
         <h2>Fundação da civilização</h2>
         <p>
           Através de um plano de colonização interestelar, os humanos criaram
@@ -24,7 +23,7 @@ export const About = () => {
         </p>
         .
       </S.floatingTab>
-      <S.rotatingCircles  {...responsive} />
+      <S.rotatingCircles  />
       <S.bottomBackground>
         <S.cityOption
           css={{
@@ -68,6 +67,7 @@ export const About = () => {
         />
       </S.bottomBackground>
       <S.movingBackground
+      
         css={{
           backgroundImage: `url('/assets/images/page3/discover${selectedCity}.jpg')`,
         }}

@@ -28,8 +28,8 @@ export const NavOptionsArr:navOptInterface[] = [
     inactiveNumber:Img.Inactive01,
     page:1,
     alt:'Inicio',
-    w:55,
-    h:15,  
+    w:57,
+    h:18,  
     },
     {
     activeImg:Img.NewsActive,
@@ -38,8 +38,8 @@ export const NavOptionsArr:navOptInterface[] = [
     inactiveNumber:Img.Inactive02,
     page:2,
     alt:'Noticias',
-    w:82,
-    h:15,  
+    w:90,
+    h:18,  
     },
     {
     activeImg:Img.ExploreActive,
@@ -48,8 +48,8 @@ export const NavOptionsArr:navOptInterface[] = [
     inactiveNumber:Img.Inactive03,
     page:3,
     alt:'Explorar Tof',
-    w:120,
-    h:11,  
+    w:127,
+    h:13,  
     },
     {
     activeImg:Img.AboutActive,
@@ -88,8 +88,8 @@ export const NavOptionsArr:navOptInterface[] = [
     inactiveNumber:Img.Inactive07,
     page:7,
     alt:'Creatower',
-    w:110,
-    h:11,  
+    w:115,
+    h:13,  
     },
 ]
 
@@ -126,8 +126,8 @@ export const RightOptionsArr:topRightNavOptInterface[] = [
     activeImg:Img.Download,
     inactiveImg:Img.Download,
     alt:'Download',
-    w:1050,
-    h:440,  
+    w:1300,
+    h:450,  
     },
    
 ]

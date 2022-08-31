@@ -17,10 +17,10 @@ export const li = styled("li", {
           backgroundImage: `url('/assets/images/general/navigationBar/nav-line.png')`,
           opacity: 0,
           left: 0,
-          bottom: -8,
-          height: 2,
+          bottom: -15,
+          height: 4,
           zIndex: -1,
-          transform: "scalex(0) ",
+          // transform: "scalex(0) ",
           transition: "all 400ms cubic-bezier(0.25,0.46,0.45,0.94) 0s",
         },
         "&:hover":{

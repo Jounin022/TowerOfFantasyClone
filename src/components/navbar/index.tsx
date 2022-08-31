@@ -28,7 +28,6 @@ export const Navbar = () => {
   
   return (
     <S.navbar
-      device={{ "@sm": "cellphone", "@md": "tablet", "@lg": "desktop" }}
     >
       <S.logo>
         <Image
@@ -45,6 +44,7 @@ export const Navbar = () => {
           return(
             <Option
             key={option.page}
+            line={isThirdOpt(activePage,option.page)? 1 : 0 }
             activeImg={option.activeImg}
             inactiveImg={option.inactiveImg}
             isActive={isThirdOpt(activePage,option.page)}

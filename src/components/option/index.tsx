@@ -10,6 +10,7 @@ interface OptionProps {
   action: () => void;
   alt?: string;
   in?:"topBar" | "sideBar" | "sideBarTop" | "sideBarBottom" | "topBarRight";
+  line?: 1 | 0;
 }
 
 export const Option = (props: OptionProps) => {
@@ -17,7 +18,7 @@ export const Option = (props: OptionProps) => {
 
   return (
     <S.li
-      css={{"&::after": {width: props.w}}}
+      css={{"&::after": {width: props.w , opacity: props.line, transform: `scalex(${props.line})`,}}}
       in={props.in || "topBar"}
       onMouseOver={() => setActive(true)}
       onMouseOut={() => setActive(false)}
