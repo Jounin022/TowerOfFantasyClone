@@ -20,7 +20,7 @@ export const li = styled("li", {
           bottom: -15,
           height: 4,
           zIndex: -1,
-          // transform: "scalex(0) ",
+         
           transition: "all 400ms cubic-bezier(0.25,0.46,0.45,0.94) 0s",
         },
         "&:hover":{

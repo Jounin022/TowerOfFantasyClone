@@ -28,50 +28,62 @@ export const About = () => {
         <S.cityOption
           css={{
             backgroundImage: "url('/assets/images/page3/p3-img1-m.png')",
-            width: `${selectedCity === 1 ? 80 : 50}px`,
-            height: `${selectedCity === 1 ? 80 : 50}px`,
+            width: `${selectedCity === 1 ? 100 : 70}px`,
+            height: `${selectedCity === 1 ? 100 : 70}px`,
             "&:before": {
               backgroundImage: `url('/assets/images/page3/${b1}')`,
-              width: `${selectedCity === 1 ? 100 : 70}px`,
-              height: `${selectedCity === 1 ? 100 : 70}px`,
+              width: `${selectedCity === 1 ? 120 : 90}px`,
+              height: `${selectedCity === 1 ? 120 : 90}px`,
+            },
+            "@desktop": {
+              bottom:"10rem",
+              right:"700px",
             },
           }}
           onClick={() => setSelectedCity(1)}
-        />
+          />
         <S.cityOption
           css={{
             backgroundImage: "url('/assets/images/page3/p3-img2-m.png')",
-            width: `${selectedCity === 2 ? 80 : 50}px`,
-            height: `${selectedCity === 2 ? 80 : 50}px`,
+            width: `${selectedCity === 2 ? 100 : 70}px`,
+            height: `${selectedCity === 2 ? 100 : 70}px`,
             "&:before": {
               backgroundImage: `url('/assets/images/page3/${b2}')`,
-              width: `${selectedCity === 2 ? 100 : 70}px`,
-              height: `${selectedCity === 2 ? 100 : 70}px`,
+              width: `${selectedCity === 2 ? 120 : 90}px`,
+              height: `${selectedCity === 2 ? 120 : 90}px`,
+            },
+            "@desktop": {
+              bottom:"17rem",
+              right:"700px",
             },
           }}
           onClick={() => setSelectedCity(2)}
-        />
+          />
 
         <S.cityOption
           css={{
             backgroundImage: "url('/assets/images/page3/p3-img3-m.png')",
-            width: `${selectedCity === 3 ? 80 : 50}px`,
-            height: `${selectedCity === 3 ? 80 : 50}px`,
+            width: `${selectedCity === 3 ? 100 : 70}px`,
+            height: `${selectedCity === 3 ? 100 : 70}px`,
             "&:before": {
               backgroundImage: `url('/assets/images/page3/${b3}')`,
-              width: `${selectedCity === 3 ? 100 : 70}px`,
-              height: `${selectedCity === 3 ? 100 : 70}px`,
+              width: `${selectedCity === 3 ? 120 : 90}px`,
+              height: `${selectedCity === 3 ? 120 : 90}px`,
+            },
+            "@desktop": {
+             bottom: "23rem",
+             right:"680px",
             },
           }}
           onClick={() => setSelectedCity(3)}
         />
       </S.bottomBackground>
       <S.movingBackground
-      
         css={{
           backgroundImage: `url('/assets/images/page3/discover${selectedCity}.jpg')`,
         }}
       />
+      <S.subBackground/>
     </S.background>
   );
 };

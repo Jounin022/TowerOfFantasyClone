@@ -20,7 +20,7 @@ export const navbar = styled("nav", {
         backgroundImage: `url('/assets/images/general/navigationBar/top.png')`,
         height: "7vw",
         opacity: 1,
-        transition: '1s ',
+        transition: '0s',
       },
    
 });
