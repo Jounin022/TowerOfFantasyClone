@@ -199,7 +199,7 @@ export const twitter = styled("div", {
     marginBottom: "0px !important",
   },
   width: "27%",
-  backgroundColor: "green",
+  backgroundColor: "white",
   height: "60%",
   top: "23%",
   overflow: "scroll",

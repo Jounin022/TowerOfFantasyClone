@@ -2,16 +2,11 @@ import { styled ,keyframes} from "../../../styles/stitches.config";
 
 export const video = styled("video", {
   width: "110%",
-  // height: "100vh",
   position: "absolute",
   left: "50%",
   top: "50%",
   transform: "translate(-50%,-50%)",
-
   "@mobile": {
-    display: "none",
-  },
-  "@tablet": {
     display: "none",
   },
   "@desktop": {
@@ -53,7 +48,6 @@ export const message = styled("div", {
     height: 100,
     top: 430,
   },
-  "@desktop": {},
 });
 
 const blinkArrows = keyframes({
@@ -102,5 +96,4 @@ export const foot = styled("footer", {
     backgroundSize: "100% 100%",
     height: "100vh",
   },
-  "@desktop": {},
 });

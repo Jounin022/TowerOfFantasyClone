@@ -1,6 +1,6 @@
 import * as S from "./navbar.styles";
 import Image from "next/image";
-import { Option } from "../option";
+import { Option } from "../../components/option";
 import { useSection } from "../../hooks/useSection";
 import { NavOptionsArr , RightOptionsArr } from "../../utils/navigation/index";
 import Logo from "../../../public/assets/images/general/navigationBar/logo.png";

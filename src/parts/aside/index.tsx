@@ -1,5 +1,5 @@
 import * as S from "./aside.styles";
-import { Option } from "../option";
+import { Option } from "../../components/option";
 import { useSection } from "../../hooks/useSection";
 import { NavOptionsArr } from "../../utils/navigation/index";
 

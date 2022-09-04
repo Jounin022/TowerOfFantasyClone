@@ -1,5 +1,4 @@
 import { styled } from "../../styles/stitches.config"
-import { Option } from "../option"
 
 export const aside = styled('aside',{
 backgroundImage: `url('/assets/images/general/sidePagination/scrollBox.png')`,

@@ -1,7 +1,7 @@
 import { styled } from "../../../styles/stitches.config"
 export const background = styled('section',{
     backgroundImage:`url('/assets/images/page4/p4-bg.jpg')`,
-    backgroundColor:'Green',
+    // backgroundColor:'Green',
     backgroundSize:'cover',
     backgroundPosition:'center',
     width:'auto',

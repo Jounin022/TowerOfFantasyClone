@@ -9,6 +9,16 @@ const rotateBack = keyframes({
   "100%": { transform: "rotate(-360deg)" },
 });
 
+const squarePath = keyframes({
+  "0%": { clipPath: "inset(0 100% 100% 0)",},
+  "100%": { clipPath: "inset(0 0 0 0)",},
+});
+
+// Não roda no eixo
+// const rotate2 = keyframes({
+//   "100%": { transform: "translate(-50%, -50%) rotate(360deg)" },
+// });
+
 const slide = keyframes({
   "0%": { backgroundPosition: "left 100px" },
   "50%": { backgroundPosition: "right top  100px" },
@@ -38,9 +48,8 @@ export const background = styled("section", {
 });
 
 export const subBackground = styled("div", {
-  // display: "flex",
   position: "absolute",
-  width: "1400px",
+  width: "1200px",
   height: "100%",
   backgroundImage: `url('/assets/images/page3/p3-bg-r.png')`,
   backgroundRepeat: "no-repeat",
@@ -69,22 +78,19 @@ export const title = styled("div", {
   "@mobile": {
     backgroundImage: `url('/assets/images/page3/p3-title.png')`,
     backgroundSize: "100% 100%",
-    // width: "min(150px,40%)",
-    width: "max(40%,400px)",
-    maxWidth: "500px",
-    maxHeight: "130px",
+    width: "max(40%,500px)",
+    maxWidth: "360px",
+    maxHeight: "70px",
     height: "80px",
     right: "auto",
     left: 15,
     top: "15px",
   },
   "@tablet": {
-    // width: "500px",
-    // height: "max(40%,400px)",
     height: "10vw",
   },
   "@desktop": {
-    left: 130,
+    left: 60,
     top: "100px",
   },
 });
@@ -98,6 +104,7 @@ export const floatingTab = styled("article", {
   position: "absolute",
   zIndex: 3,
   transition: "all 500ms",
+  animation: `${squarePath} 500ms ease-in-out`,
   "& h2": {
     display: "flex",
     alignItems: "center",
@@ -163,7 +170,6 @@ export const floatingMainCircle = styled("div", {
   position: "absolute",
   width: 100,
   height: 100,
-
   zIndex: 2,
   backgroundRepeat: "no-repeat",
   backgroundSize: "100% 100%",
@@ -194,8 +200,6 @@ export const floatingMainCircle = styled("div", {
     right: "unset",
     left: "0px",
   },
-  "@desktop": {
-  },
 });
 
 export const rotatingCircles = styled("div", {
@@ -206,7 +210,7 @@ export const rotatingCircles = styled("div", {
   height: "190vw",
   position: "absolute",
   zIndex: 2,
-  animation: `${rotate} 20s linear infinite `,
+  // animation: `${rotate} 20s linear infinite `,
   "&:after": {
     width: "190vw",
     height: "190vw",
@@ -226,7 +230,6 @@ export const rotatingCircles = styled("div", {
     content: "",
     position: "absolute",
   },
-
   "@mobile": {
     top: "23vw",
     left: -140,
@@ -236,12 +239,13 @@ export const rotatingCircles = styled("div", {
     left: -200,
   },
   "@desktop": {
-    top: "5vw",
+    top: "unset",
+    bottom: "0px",
     left: "unset",
-    right: -200,
+    right: -300,
     backgroundSize: "1100px 1100px",
     width: "1100px",
-    height: "1100px",
+    height: "88.307%",
     "&:after": {
       width: "1100px",
       height: "1100px",
@@ -252,12 +256,12 @@ export const rotatingCircles = styled("div", {
     },
   },
 });
+
 export const movingBackground = styled("div", {
   zIndex: -1,
   backgroundRepeat: "no-repeat",
   backgroundSize: "auto 100%",
   position: "absolute",
-  // transition: "all 700ms ease-in-out",
   bottom: 0,
   width: "100%",
   height: "95%",
@@ -266,24 +270,24 @@ export const movingBackground = styled("div", {
     animation: `${slide} 20s infinite ease-in-out`,
     backgroundSize: "auto 100%",
   },
-  
   "@desktop": {
-    // height: "85%",
-    right: "-100px",
-    height: "85%",
+    right: "-240px",
+    height: "82%",
+    backgroundColor:"green",
     backgroundSize: "100% 100%",
     width: "1000px",
     zIndex: 1,
     animation: "none",
-    clipPath: "ellipse(490px 490px at 55% 70%)",
-    // right: "-20%",
+    maskImage:`url('/assets/images/page3/mask.png')`,
+    maskSize: "100% auto",
+    maskRepeat:"no-repeat",
 },
 });
 
 
 export const bottomBackground = styled("div", {
   backgroundImage: "url('/assets/images/page3/p3-bottom.png')",
-  zIndex: 4,
+  zIndex: 999,
   backgroundRepeat: "no-repeat",
   backgroundSize: "100% 190%",
   position: "absolute",
@@ -294,7 +298,6 @@ export const bottomBackground = styled("div", {
   justifyContent: "space-around",
   alignItems: "center",
   paddingLeft: "40px",
-  
   "@desktop": {
     backgroundImage: "none",
     width: "84%",
@@ -310,19 +313,18 @@ export const cityOption = styled("button", {
   border: "none",
   padding: 0,
   margin: 0,
-  // zIndex: 4,
+  zIndex: 999,
   transition: "all 500ms ease-in-out",
   "&:before": {
     transition: "all 500ms ease-in-out",
-    zIndex: 1,
     content: "",
     position: "absolute",
-    transform: "translate(-50%, -50%)",
+    transform: "translate(-50%, -50%) rotate(360deg)",
     backgroundRepeat: "no-repeat",
     backgroundSize: "100% 100%",
   },
   "@desktop": {
-    transform: "translate(-50%, 50%)",
+    transform: "translate(50%, 50%)",
     position: "absolute",
   }
 });
