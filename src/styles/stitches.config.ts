@@ -5,6 +5,14 @@ export const { styled, css, globalCss, getCssText ,keyframes ,config} = createSt
       tablet: '(min-width: 768px)',
       desktop: '(min-width: 1024px)',
     },
+    utils:{
+      bgg: (value:boolean) => ({
+        backgroundColor:"green" ,
+      }),
+      br: (value:number) => ({
+        borderRadius: value,
+      }),
+    }
   })
 // export const responsive:any = {device: { "@sm": "mobile", "@md": "tablet", "@lg": "desktop"}}// as ComponentProps<S>
 

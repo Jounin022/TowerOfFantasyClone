@@ -1,10 +1,12 @@
 import * as S from "./notices.styles";
-
+// import 
 export const Notices = () => {
+  
   return (
     <S.background id="section-2">
       <S.title/>
       <S.panel>
+      <S.imagePanel />
         <S.innerAside>
           <S.button>NEWS</S.button>
           <S.button>BULLETIN</S.button>
@@ -34,12 +36,33 @@ export const Notices = () => {
             <S.li>
               <p>Uma carta aos Errantes</p> 2022.8.11
             </S.li>
+            <S.li>
+              <p>Uma carta aos Errantes</p> 2022.8.11
+            </S.li>
+            <S.li>
+              <p>Uma carta aos Errantes</p> 2022.8.11
+            </S.li>
+            <S.li>
+              <p>Uma carta aos Errantes</p> 2022.8.11
+            </S.li>
+            <S.li>
+              <p>Uma carta aos Errantes</p> 2022.8.11
+            </S.li>
+            <S.li>
+              <p>Uma carta aos Errantes</p> 2022.8.11
+            </S.li>
+            <S.li>
+              <p>Uma carta aos Errantes</p> 2022.8.11
+            </S.li>
+            <S.li>
+              <p>Uma carta aos Errantes</p> 2022.8.11
+            </S.li>
           </ul>
         </S.article>
+        <S.imageBanner />
       </S.panel>
-      
       <S.twitter>
-        <blockquote className="twitter-tweet">
+        <blockquote  className="twitter-tweet">
           <p lang="en" dir="ltr">
             1 DAY until the
             <a href="https://twitter.com/hashtag/TowerofFantasy?src=hash&amp;ref_src=twsrc%5Etfw">
@@ -70,7 +93,6 @@ export const Notices = () => {
           charSet="utf-8"
         ></script>
       </S.twitter>
-      <S.image />
     </S.background>
   );
 };

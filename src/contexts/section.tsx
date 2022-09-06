@@ -1,6 +1,7 @@
 import {
   createContext,
   useEffect,
+  useLayoutEffect,
   useState,
   WheelEvent,
   WheelEventHandler,
@@ -18,7 +19,6 @@ export const SectionProvider = ({ children }: any) => {
 
   const onScroll = (e: WheelEvent<HTMLElement | undefined>) => {
     let element = document.getElementById(`section-${activePage}`);
-    e.preventDefault();
     if (e?.deltaY > 0 && activePage < 7) {
       setActivePage(activePage + 1);
       element?.scrollIntoView({
@@ -42,6 +42,7 @@ export const SectionProvider = ({ children }: any) => {
       behavior: "smooth",
     });
   }, [activePage]);
+
 
   return (
     <SectionContext.Provider value={{ activePage, setActivePage, onScroll }}>

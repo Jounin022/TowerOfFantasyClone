@@ -13,7 +13,7 @@ export const About = () => {
 
       <S.floatingMainCircle>
         <Image alt="A.I.D.A symbol" src={hands} width={50} height={50} />
-      </S.floatingMainCircle>
+      </S.floatingMainCircle>    
 
       <S.floatingTab>
         <h2>Fundação da civilização</h2>
@@ -25,7 +25,7 @@ export const About = () => {
           Lá, construíram a Torre da Fantasia a fim de minerar Omnium, uma
           energia potente e misteriosa contida no cometa Mara.
         </p>
-      </S.floatingTab>
+      </S.floatingTab>      
 
       <S.bottomBackground>
         {cities.map((city) => {
@@ -54,8 +54,6 @@ export const About = () => {
     
       <S.movingBackground css={{backgroundImage: `url('/assets/images/page3/discover${selectedCity}.jpg')`}}/>
       <S.rotatingCircles />
-     
-
       <S.subBackground />
     </S.background>
   );

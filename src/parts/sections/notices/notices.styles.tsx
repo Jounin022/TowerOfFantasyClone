@@ -1,4 +1,5 @@
 import { styled } from "../../../styles/stitches.config";
+import Image from "next/image";
 
 export const background = styled("section", {
   height: "100vh",
@@ -9,6 +10,7 @@ export const background = styled("section", {
   justifyContent: "center",
   backgroundSize: "cover",
   overflow: "hidden",
+  zIndex:0,
   "@mobile": {
     backgroundImage: `url('/assets/images/page2/p6-bg-m.jpg')`,
     transition: "500ms all ease-in-out ",
@@ -45,36 +47,86 @@ export const title = styled("div", {
     width: "550px",
     height: "70px",
     opacity: "100%",
-    top: "7%",
+    top: "10%",
   },
 });
 
 export const panel = styled("div", {
-  width: "95%",
+  width: "90%",
   display: "flex",
-  position: "absolute",
-  objectFit: "contain",
-  backgroundRepeat: "no-repeat",
-  backgroundPosition: "center",
-  backgroundSize: "100% 100%",
+  position: "relative",
   pointerEvents: "none",
   zIndex: 5,
   "@mobile": {
-    backgroundImage: `url('/assets/images/page2/p6-main-m.png')`,
     height: "80%",
     top: "15%",
   },
   "@tablet": {
     top: "19%",
-    height: "100%",
+    height: "90%",
   },
   "@desktop": {
-    backgroundImage: `url('/assets/images/page2/p6-main.png')`,
-    height: "75%",
+    height: "80%",
     top: "16%",
   },
 });
 
+export const imagePanel = styled("div",{
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+  backgroundSize: "100% 100%",
+  zIndex:2,
+  height: "100%",
+  width: "100%",
+  position: "absolute",
+  top: "0px",
+  left: "0px",
+  "@mobile": {
+    backgroundImage: `url('/assets/images/page2/p6-main-m.png')`,
+  },
+  "@desktop": {
+    backgroundImage: `url('/assets/images/page2/p6-main.png')`,
+  },
+
+})
+
+export const imageBanner = styled("div", {
+  position: "absolute",
+  backgroundRepeat: "no-repeat",
+  zIndex: 1,
+  "@mobile": {
+    backgroundImage: `url('/assets/images/page2/noticia.jpg')`,
+    backgroundSize: "100% 100%",
+    top: "4%",
+    left: "5%",
+    height: "40%",
+    width: "90%",
+    borderTopRightRadius: "10%",
+    borderTopLeftRadius: 0,
+  },
+  "@tablet": {
+    left: "5%",
+    top: "2%",
+    width: "90%",
+    height: "40%",
+    backgroundSize: "cover",
+    backgroundImage: `url('/assets/images/page2/noticia.jpg')`,
+    backgroundPosition: "center",
+    borderTopLeftRadius: "0%",
+  },
+  "@desktop": {
+    backgroundImage: `url('/assets/images/page2/noticia.jpg')`,
+    backgroundSize: "cover",
+    top: "10%",
+    left: "2%",
+    height: "60%",
+    zIndex: -1,
+    width: "65%",
+    backgroundPosition: "center",
+    borderTopRightRadius: "0%",
+    borderTopLeftRadius: "10%",
+  },
+});
 export const li = styled("li", {
   listStyle: "none",
   width: "auto",
@@ -94,20 +146,25 @@ export const article = styled("article", {
   bottom: 20,
   pointerEvents: "all",
   overflowY: "scroll",
+  zIndex:3,
   "&::-webkit-scrollbar": {
-    display: "none",
+    width: "10px",
+    backgroundColor: "rgb(0, 224, 224)",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    backgroundColor: "rgb(8, 130, 130)",
   },
   "@mobile": {
     left: 15,
     height: "38%",
-    width: "95%",
+    width: "90%",
   },
   "@tablet": {
   },
   "@desktop": {
-    left: 220,
+    left: "15%",
     height: "25%",
-    width: "45vw",
+    width: "52%",
   },
 });
 
@@ -138,6 +195,7 @@ export const button = styled("button", {
 export const innerAside = styled("aside", {
   display: "flex",
   position: "absolute",
+  zIndex:3,
   "@mobile": {
     backgroundColor: "transparent",
     flexDirection: "row",
@@ -159,38 +217,6 @@ export const innerAside = styled("aside", {
   },
 });
 
-export const image = styled("div", {
-  position: "absolute",
-  backgroundSize: "100% 100%",
-  backgroundRepeat: "no-repeat",
-  zIndex: 1,
-  "@mobile": {
-    backgroundImage: `url('/assets/images/page2/noticia.jpg')`,
-    top: "18.5%",
-    left: "7%",
-    height: "30%",
-    width: "85%",
-    borderTopRightRadius: "10%",
-    borderTopLeftRadius: 0,
-  },
-  "@tablet": {
-    top: "23%",
-    height: "40%",
-    backgroundImage: `url('/assets/images/page2/noticia.jpg')`,
-    backgroundPosition: "center",
-    borderTopLeftRadius: "0%",
-  },
-  "@desktop": {
-    backgroundImage: `url('/assets/images/page2/noticia.jpg')`,
-    top: "24%",
-    left: "4%",
-    height: "44%",
-    width: "62%",
-    backgroundPosition: "center",
-    borderTopRightRadius: "0%",
-    borderTopLeftRadius: "10%",
-  },
-});
 
 export const twitter = styled("div", {
   position: "absolute",
@@ -198,14 +224,21 @@ export const twitter = styled("div", {
     marginTop: "0px !important",
     marginBottom: "0px !important",
   },
-  width: "27%",
+  width: "25%",
   backgroundColor: "white",
-  height: "60%",
-  top: "23%",
-  overflow: "scroll",
+  height: "66%",
+  top: "20%",
+  // overflow: "hidden",
+  "&::-webkit-scrollbar": {
+    width: "10px",
+    backgroundColor: "rgb(0, 224, 224)",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    backgroundColor: "rgb(8, 130, 130)",
+  },
   overflowX: "hidden",
-  borderBottomRightRadius: "20%",
-  right: "4%",
+  borderBottomRightRadius: "2 %",
+  right: "7%",
   "@mobile": {
     display: "none",
   },

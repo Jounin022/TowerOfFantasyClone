@@ -7,23 +7,13 @@ export const globalStyles = globalCss({
     boxSizing: 'border-box',
     scrollbarWidth: 'none', 
     backgroundColor:'#333',
-    // overflo
     "&::-webkit-scrollbar":{
       display:'none',
     },
-    // "&::-webkit-scrollbar":{
-    //   display:'none',
-    // },
-    // overflow: 'hidden',
-    // scrollbarColor:"green",
-    scroll:"green",
-
   },
-  
-//   '*':{
-// scrollbarWidth:'thin',
-//   },
-
+  "*":{
+  boxSizing: 'border-box',
+  },
   "@font-face":{
     src: `url('/asset/fonts/Oxanium-Bold.ttf')`,
     fontFamily: 'Oxanium',
