@@ -1,19 +1,31 @@
 import * as S from "./notices.styles";
-// import 
+// import
 export const Notices = () => {
-  
   return (
     <S.background id="section-2">
-      <S.title/>
+      <S.title />
       <S.panel>
-      <S.imagePanel />
+        <S.imagePanel />
         <S.innerAside>
           <S.button>NEWS</S.button>
           <S.button>BULLETIN</S.button>
           <S.button>EVENT</S.button>
         </S.innerAside>
-        
-        <S.article>
+
+        <S.article
+           className="tal"
+           onMouseEnter={(e) => {
+            console.log('a')
+            //  document.documentElement.style.overflow = "scroll";
+            // console.log("this",this);
+            // console.log("document",document.documentElement);
+          }}
+           onMouseLeave={(e) => {
+             document.documentElement.style.overflow = "hidden";
+            // console.log("this",this);
+            // console.log("document",document.documentElement);
+          }}
+        >
           <ul style={{ margin: "0px", padding: "0px" }}>
             <S.li>
               <p>Perguntas frequentes do lançamento global ...</p> 2022.8.9
@@ -59,10 +71,16 @@ export const Notices = () => {
             </S.li>
           </ul>
         </S.article>
-        <S.imageBanner />
+        <div>
+          <S.imageBanner />
+        </div>
       </S.panel>
-      <S.twitter>
-        <blockquote  className="twitter-tweet">
+      <S.twitter
+        onMouseOver={() => {
+          document.documentElement.style.overflow = "hidden";
+        }}
+      >
+        <blockquote className="twitter-tweet">
           <p lang="en" dir="ltr">
             1 DAY until the
             <a href="https://twitter.com/hashtag/TowerofFantasy?src=hash&amp;ref_src=twsrc%5Etfw">

@@ -1,5 +1,5 @@
 import { styled } from '../../../styles/stitches.config';
-
+import Image from 'next/image'
 export const background = styled('section', {
   backgroundImage: "url('/assets/images/page4/p4-bg.jpg')",
   backgroundSize: 'cover',
@@ -13,7 +13,6 @@ export const background = styled('section', {
 });
 
 export const charBackground = styled('div', {
-  backgroundImage: "url('/assets/images/page4/nemesis/Nemesis-bg.png')",
   backgroundSize: "100% 100%",
   backgroundRepeat: "no-repeat",
   position: "absolute",
@@ -22,14 +21,28 @@ export const charBackground = styled('div', {
   zIndex:1,
   width: 800,
   height: "66%",
-  "&:before": {
-    backgroundImage: "url('/assets/images/page4/nemesis/Nemesis-fade.png')",
-    backgroundSize: "100% 100%",
+  transition: "all 1s ease-in-out",
+  "&:after": {
+    opacity: 0,
+    content: '',
+    backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     position: "absolute",
     zIndex:2,
-    width: 100,
-    height: 100,
+    width: "100%",
+    height: "100%",
   },
 
 });
+
+
+export const characterWrapper  = styled('div',{
+width:'100px',
+height:'100px',
+})
+
+export const character = styled(Image,{
+width:'100px',
+height:'100px',
+position: 'relative',
+})

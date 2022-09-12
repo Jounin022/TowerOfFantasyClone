@@ -16,6 +16,7 @@ export const video = styled("video", {
 
 export const background = styled("section", {
   backgroundImage: `url('/assets/images/page1/download-bg.jpg')`,
+  scrollSnapAlign: 'start',
   backgroundSize: "cover",
   backgroundPosition: "center",
   width: "auto",
@@ -88,7 +89,7 @@ export const foot = styled("footer", {
   },
   "@mobile": {
     backgroundImage: `url('/assets/images/page1/p1-bottom-m.png')`,
-    backgroundSize: "100% ",
+    backgroundSize: "100%",
     height: "8vw",
   },
   "@tablet": {

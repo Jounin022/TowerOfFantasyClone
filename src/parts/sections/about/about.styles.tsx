@@ -21,6 +21,7 @@ const slide = keyframes({
 });
 
 export const background = styled("section", {
+  scrollSnapAlign: 'start',
   width: "auto",
   height: "100vh",
   position: "relative",
@@ -30,7 +31,6 @@ export const background = styled("section", {
   justifyContent: "center",
   alignItems: "center",
   overflow: "hidden",
-
   "@mobile": {
     backgroundImage: `url('/assets/images/page3/p3-top.png')`,
     backgroundSize: "100%",
@@ -117,7 +117,7 @@ export const floatingTab = styled("article", {
     width: "190px",
     top: "40%",
     right: "15%",
-    height: "215px",
+    height: "290px",
     padding: "30px 15px 0px 15px",
 
     "& p": {
@@ -129,7 +129,7 @@ export const floatingTab = styled("article", {
   "@tablet": {
     backgroundImage: `url('/assets/images/page3/p3-text.png')`,
     width: "250px",
-    height: "135px",
+    height: "200px",
     right: "unset",
     top: "36%",
     left: "95px",
@@ -156,7 +156,7 @@ export const floatingTab = styled("article", {
     maxWidth: "330px",
     top: "40%",
     right: "15%",
-    height: "250px",
+    height: "fit-content",
     marginBottom: "10px",
   },
 });

@@ -2,6 +2,7 @@ import { styled } from "../../../styles/stitches.config";
 import Image from "next/image";
 
 export const background = styled("section", {
+  scrollSnapAlign: 'start',
   height: "100vh",
   display: "flex",
   position: "relative",
@@ -28,6 +29,7 @@ export const title = styled("div", {
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
   backgroundSize: "100% 100%",
+  maxWidth: "450px",
   objectFit: "contain",
   "@mobile": {
     backgroundImage: `url('/assets/images/page2/p6-title-m.png')`,
@@ -228,7 +230,6 @@ export const twitter = styled("div", {
   backgroundColor: "white",
   height: "66%",
   top: "20%",
-  // overflow: "hidden",
   "&::-webkit-scrollbar": {
     width: "10px",
     backgroundColor: "rgb(0, 224, 224)",
@@ -241,8 +242,6 @@ export const twitter = styled("div", {
   right: "7%",
   "@mobile": {
     display: "none",
-  },
-  "@tablet": {
   },
   "@desktop": {
     display: "block",

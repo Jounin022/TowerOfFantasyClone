@@ -18,21 +18,21 @@ export const SectionProvider = ({ children }: any) => {
   const [activePage, setActivePage] = useState<number>(1);
 
   const onScroll = (e: WheelEvent<HTMLElement | undefined>) => {
-    let element = document.getElementById(`section-${activePage}`);
-    if (e?.deltaY > 0 && activePage < 7) {
-      setActivePage(activePage + 1);
-      element?.scrollIntoView({
-        block: "start",
-        behavior: "smooth",
-      });
-    }
-    if (e?.deltaY < 0 && activePage > 1) {
-      setActivePage(activePage - 1);
-      element?.scrollIntoView({
-        block: "start",
-        behavior: "smooth",
-      });
-    }
+    // let element = document.getElementById(`section-${activePage}`);
+    // if (e?.deltaY > 0 && activePage < 7) {
+    //   setActivePage(activePage + 1);
+    //   element?.scrollIntoView({
+    //     block: "start",
+    //     behavior: "smooth",
+    //   });
+    // }
+    // if (e?.deltaY < 0 && activePage > 1) {
+    //   setActivePage(activePage - 1);
+    //   element?.scrollIntoView({
+    //     block: "start",
+    //     behavior: "smooth",
+    //   });
+    // }
   };
 
   useEffect(() => {
