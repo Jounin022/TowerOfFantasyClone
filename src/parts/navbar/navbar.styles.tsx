@@ -9,6 +9,7 @@ export const navbar = styled("nav", {
       '@mobile': {
         opacity: 0,
         transition: '1s ',
+        display: 'none',
       },
       "@tablet": {
         opacity: 0,

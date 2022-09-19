@@ -6,6 +6,14 @@ import hands from "../../../../public/assets/images/page3/p3-flash.png";
 export const About = () => {
   const [selectedCity, setSelectedCity] = useState(1);
 
+  const beforeOptionImg = (isActive:boolean) =>{
+    return isActive ? "url('/assets/images/page3/p3-btn-bg-a.png')" : "url('/assets/images/page3/p3-btn-bg.png')"
+  }
+
+  const afterOptionImg = (isActive:boolean) =>{
+    return isActive ? "url('/assets/images/page3/p3-btn-after-a.png')" : "url('/assets/images/page3/p3-btn-after.png')"
+  }
+
   return (
     <S.background id="section-3">
 
@@ -34,12 +42,22 @@ export const About = () => {
             key={city.number}
             css={{
                 backgroundImage: `url(${city.iconImg})`,
-                width: city.size(selectedCity),
-                height: city.size(selectedCity),
+                width: city.isActive(selectedCity) ? '100px' : '70px',
+                height: city.isActive(selectedCity) ? '100px' : '70px',
                 "&:before": {
-                  backgroundImage: city.backgroundImage(selectedCity),
-                  width: city.beforeSize(selectedCity),
-                  height: city.beforeSize(selectedCity),
+                  backgroundImage: beforeOptionImg(city.isActive(selectedCity)),
+                  width: city.isActive(selectedCity) ? '110px' : '90px',
+                  height: city.isActive(selectedCity) ? '110px' : '90px',
+                  top: city.isActive(selectedCity) ? "-5px" : "-10px",
+                  left: city.isActive(selectedCity) ? "-5px" : "-10px",
+                  opacity: city.isActive(selectedCity) ? "1" : "0.6",
+                },
+                "&:after": {
+                  backgroundImage: afterOptionImg(city.isActive(selectedCity)),
+                  width: city.isActive(selectedCity) ? '90px' : '75px',
+                  height: city.isActive(selectedCity) ? '90px' : '75px',
+                  top:city.isActive(selectedCity) ? '5px' : '-3px',
+                  left:city.isActive(selectedCity) ? '5px' : '-3px',
                 },
                 "@desktop": {
                   bottom: city.bottom,

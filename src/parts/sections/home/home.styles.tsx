@@ -1,7 +1,7 @@
 import { styled ,keyframes} from "../../../styles/stitches.config";
 
 export const video = styled("video", {
-  width: "110%",
+  width: "100%",
   position: "absolute",
   left: "50%",
   top: "50%",
@@ -16,7 +16,7 @@ export const video = styled("video", {
 
 export const background = styled("section", {
   backgroundImage: `url('/assets/images/page1/download-bg.jpg')`,
-  scrollSnapAlign: 'start',
+  // scrollSnapAlign: 'start',
   backgroundSize: "cover",
   backgroundPosition: "center",
   width: "auto",
@@ -39,7 +39,7 @@ export const message = styled("div", {
   "@mobile": {
     backgroundImage: `url('/assets/images/page1/home-tittle-m.png')`,
     backgroundSize: "contain",
-    transition: "500ms all cubic-bezier(0.42,0,0.65,1.5)",
+    // transition: "500ms all cubic-bezier(0.42,0,0.65,1.5)",
     height: 500,
     top: 90,
   },
@@ -89,12 +89,12 @@ export const foot = styled("footer", {
   },
   "@mobile": {
     backgroundImage: `url('/assets/images/page1/p1-bottom-m.png')`,
-    backgroundSize: "100%",
-    height: "8vw",
+    backgroundSize: "cover",
+    height: "40px",
   },
   "@tablet": {
     backgroundImage: `url('/assets/images/page1/p1-bottom.png')`,
     backgroundSize: "100% 100%",
-    height: "100vh",
+    height: "115vh",
   },
 });

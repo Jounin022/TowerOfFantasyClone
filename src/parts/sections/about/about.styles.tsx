@@ -2,11 +2,11 @@ import { table } from "console";
 import { styled, keyframes } from "../../../styles/stitches.config";
 
 const rotate = keyframes({
-  "100%": { transform: "rotate(360deg)" },
+  "100%": { rotate: "360deg" },
 });
 
 const rotateBack = keyframes({
-  "100%": { transform: "rotate(-360deg)" },
+  "100%": { rotate: "-360deg" },
 });
 
 const squarePath = keyframes({
@@ -21,7 +21,7 @@ const slide = keyframes({
 });
 
 export const background = styled("section", {
-  scrollSnapAlign: 'start',
+  // scrollSnapAlign: 'start',
   width: "auto",
   height: "100vh",
   position: "relative",
@@ -34,6 +34,7 @@ export const background = styled("section", {
   "@mobile": {
     backgroundImage: `url('/assets/images/page3/p3-top.png')`,
     backgroundSize: "100%",
+    // minWidth:420,
   },
   "@tablet": {},
   "@desktop": {
@@ -50,7 +51,7 @@ export const subBackground = styled("div", {
   backgroundRepeat: "no-repeat",
   backgroundSize: "100% 100%",
   bottom:"0px",
-  right: "-290px",
+  right: "-420px",
   "@mobile": {
     display: "none",
   },
@@ -98,8 +99,8 @@ export const floatingTab = styled("article", {
   justifyContent: "end",
   position: "absolute",
   zIndex: 5,
-  transition: "all 500ms",
-  animation: `${squarePath} 500ms ease-in-out`,
+  // transition: "all 2s",
+  // animation: `${squarePath} 500ms ease-in-out`,
   "& h2": {
     display: "flex",
     alignItems: "center",
@@ -312,7 +313,14 @@ export const cityOption = styled("button", {
     transition: "all 500ms ease-in-out",
     content: "",
     position: "absolute",
-    transform: "translate(-50%, -50%) rotate(360deg)",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "100% 100%",
+  },
+  "&:after": {
+    transition: "all 500ms ease-in-out",
+    content: "",
+    position: "absolute",
+    animation: `${rotateBack} 10s linear infinite`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "100% 100%",
   },

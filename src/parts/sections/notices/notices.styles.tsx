@@ -2,7 +2,8 @@ import { styled } from "../../../styles/stitches.config";
 import Image from "next/image";
 
 export const background = styled("section", {
-  scrollSnapAlign: 'start',
+  // scrollSnapAlign: 'start',
+  width: "auto",
   height: "100vh",
   display: "flex",
   position: "relative",

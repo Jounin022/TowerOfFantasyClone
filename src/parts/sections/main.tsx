@@ -8,25 +8,26 @@ export const Main = () => {
   const { onScroll } = useSection();
 
   // cancela ação padrão do scroll para não parar entre uma tela e outra
-  // useEffect(() => {
-  //   document.addEventListener(
-  //     "wheel",
-  //     (e) => {
-  //       e.preventDefault();
-  //     },
-  //     { passive: false }
-  //   );
-  // }, []);
+  useEffect(() => {
+    document.addEventListener(
+      "wheel",
+      (e) => {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
+  }, []);
 
 const Main = styled('main',{
-  height: '100vh',
-  scrollSnapType: 'block mandatory',
-  scrollSnapAlign:'start',
-  overflowY:'scroll',
+  // height: '100vh',
+  // scrollSnapType: 'block mandatory',
+  // scrollSnapAlign:'start',
+  // overflowY:'scroll',
 })
 
+
   return (
-    <Main onWheel={(e) => onScroll(e)}>
+    <main onWheel={(e) => onScroll(e)}>
       <Navbar />
       <Aside />
       <Home />
@@ -34,6 +35,6 @@ const Main = styled('main',{
       <About />
       <Characters />
       <Features />
-    </Main>
+    </main>
   );
 };
