@@ -15,7 +15,6 @@ export const globalStyles = globalCss({
   boxSizing: 'border-box',
   },
   "@font-face":{
-    src: `url('/asset/fonts/Oxanium-Bold.ttf')`,
     fontFamily: 'Oxanium',
     fontWeight: 400,
     fontStyle: 'normal',

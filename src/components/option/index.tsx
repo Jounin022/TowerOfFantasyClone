@@ -1,14 +1,15 @@
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import { useState } from "react";
 import * as S from "./option.styles";
 interface OptionProps {
-  activeImg: StaticImageData;
-  inactiveImg: StaticImageData;
+  activeImg?: StaticImageData;
+  inactiveImg?: StaticImageData;
   w?: number;
   h?: number;
   isActive?: boolean;
   action: () => void;
-  alt?: string;
+  number:string
+  name?: string;
   in?:"topBar" | "sideBar" | "sideBarTop" | "sideBarBottom" | "topBarRight";
   line?: 1 | 0;
 }
@@ -24,11 +25,8 @@ export const Option = (props: OptionProps) => {
       onMouseOut={() => setActive(false)}
       onClick={() => props.action()}
     >
-      <Image
-        height={props.h || 25}
-        width={props.w || 25}
-        alt={props.alt}
-        src={active || props.isActive ? props.activeImg : props.inactiveImg}
+      <S.Button
+        css={{ height:props.h || 25, width: props.w || 25, bgg:true}}
       />
     </S.li>
   );

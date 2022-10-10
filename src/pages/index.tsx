@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import DeviceIndicator from "../components/displayIndicator";
 import { SectionProvider } from "../contexts/section";
-import { Main } from "../parts/sections"
+import { Main } from "../containers/sections"
 
 const ToFSPA: NextPage = () => {
   return (

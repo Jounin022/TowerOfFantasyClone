@@ -10,8 +10,8 @@ export const cities = [
   },
   {
     number: 2,
-    title: 'Fundação da civilização',
-    story: 'Através de um plano de colonização interestelar, os humanos criaram uma nova civilização em um planeta chamado Aida<br /><br /> Lá, construíram a Torre da Fantasia a fim de minerar Omnium, uma energia potente e misteriosa contida no cometa Mara.',
+    title: 'Cataclismo e Renascimento',
+    story: 'O Cataclismo provocou a radiação de Omnium e uma fenda temporal que quase destruiu toda a civilização de Aida.',
     iconImg: '/assets/images/page3/p3-img2-m.png',
     isActive: (selected:number) => selected === 2,
     bottom: '43%',
@@ -19,8 +19,8 @@ export const cities = [
   },
   {
     number: 3,
-    title: 'Fundação da civilização',
-    story: 'Através de um plano de colonização interestelar, os humanos criaram uma nova civilização em um planeta chamado Aida<br /><br /> Lá, construíram a Torre da Fantasia a fim de minerar Omnium, uma energia potente e misteriosa contida no cometa Mara.',
+    title: 'Caos e desordem',
+    story: 'Frente a uma nova ordem mundial emergente, os autoproclamados salvadores chamados Herdeiros de Aida declararam o Omnium como culpado de todos os desastres. Eles se opõem a tudo que a Hykros defende e causam novos conflitos no mundo.',
     iconImg: '/assets/images/page3/p3-img3-m.png',
     isActive: (selected:number) => selected === 3,
     bottom: '59%',

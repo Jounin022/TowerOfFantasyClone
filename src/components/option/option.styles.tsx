@@ -51,3 +51,7 @@ export const li = styled("li", {
     },
   },
 });
+
+export const Button = styled("button", {
+  
+})

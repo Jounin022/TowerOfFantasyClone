@@ -1,5 +1,5 @@
 import Main from "../../../public/assets/images/page4/meryl/Meryl.png";
-import Main_M from "../../../public/assets/images/page4/meryl/Meryl-m.png";
+import Main_M from "../../../public/assets/images/page4/meryl/Meryl-m2.png";
 import Inactive from "../../../public/assets/images/page4/meryl/Meryl.jpg";
 import Active from "../../../public/assets/images/page4/meryl/Meryl-a.jpg";
 import Weapon from "../../../public/assets/images/page4/meryl/Meryl-info.png";

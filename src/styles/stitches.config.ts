@@ -24,7 +24,7 @@ export const { styled, css, globalCss, getCssText ,keyframes ,config} = createSt
         borderRadius: value,
       }),
       bg: ({i, s, p }:IBackground) => ({
-      backgroundImage:i,
+      backgroundImage:`url('${i}')`,
       backgroundRepeat: "no-repeat",
       backgroundSize: s || '100% 100%',
       backgroundPosition: p || "center",

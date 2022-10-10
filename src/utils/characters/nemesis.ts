@@ -1,5 +1,5 @@
 import Main from "../../../public/assets/images/page4/nemesis/Nemesis.png";
-import Main_M from "../../../public/assets/images/page4/nemesis/Nemesis-m.png";
+import Main_M from "../../../public/assets/images/page4/nemesis/Nemesis-m2.png";
 import Inactive from "../../../public/assets/images/page4/nemesis/Nemesis.jpg";
 import Active from "../../../public/assets/images/page4/nemesis/Nemesis-a.jpg";
 import Weapon from "../../../public/assets/images/page4/nemesis/Nemesis-info.png";
