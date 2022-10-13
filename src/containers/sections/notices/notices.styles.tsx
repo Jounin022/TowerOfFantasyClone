@@ -92,7 +92,14 @@ export const imagePanel = styled("div",{
   "@desktop": {
     backgroundImage: `url('/assets/images/page2/p6-main.png')`,
   },
-
+  // variants:{
+  // mobile:{
+  //   true:{bg:{i:`url('/assets/images/page2/p6-main-m.png')`,}}
+  // },
+  // desktop:{
+  //   true:{bgg:true}
+  // }
+// }
 })
 
 export const imageBanner = styled("div", {

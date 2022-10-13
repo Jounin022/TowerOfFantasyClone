@@ -3,7 +3,7 @@ import * as S from "./notices.styles";
 export const Notices = () => {
   return (
     <S.background id="section-3">
-      {/* <S.title /> */}
+      <S.title id="teste"/>
       <S.panel>
         <S.imagePanel />
         <S.innerAside>

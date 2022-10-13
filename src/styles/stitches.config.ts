@@ -3,7 +3,6 @@ interface IBackground {i:string , s?:string, p?:string}
 
 export const { styled, css, globalCss, getCssText ,keyframes ,config} = createStitches({
     media: {
-      // noBreak: '(max-width: 320px)',
       mobile: '(min-width: 0px)',
       tablet: '(min-width: 768px)',
       desktop: '(min-width: 1024px)',

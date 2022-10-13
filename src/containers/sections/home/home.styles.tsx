@@ -5,6 +5,7 @@ export const video = styled("video", {
   position: "absolute",
   left: "50%",
   top: "50%",
+  zIndex: "1",
   transform: "translate(-50%,-50%)",
   "@mobile": {
     display: "none",
@@ -15,14 +16,9 @@ export const video = styled("video", {
 });
 
 export const background = styled("section", {
-  backgroundImage: `url('/assets/images/page1/download-bg.jpg')`,
-  // scrollSnapAlign: 'start',
-  backgroundSize: "cover",
-  backgroundPosition: "center",
   width: "auto",
   height: "100vh",
   position: "relative",
-  backgroundRepeat: "no-repeat",
   objectFit: "contain",
   display: "flex",
 });
@@ -34,12 +30,11 @@ export const message = styled("div", {
   margin: "0 auto",
   width: "100vw",
   objectFit: "contain",
-  zIndex: 1,
+  zIndex: 2,
 
   "@mobile": {
     backgroundImage: `url('/assets/images/page1/home-tittle-m.png')`,
     backgroundSize: "contain",
-    // transition: "500ms all cubic-bezier(0.42,0,0.65,1.5)",
     height: 500,
     top: 90,
   },
@@ -66,7 +61,7 @@ export const foot = styled("footer", {
   width: "100vw",
   position: "absolute",
   backgroundRepeat: "no-repeat",
-  zIndex: 1,
+  zIndex: 2,
   display: "flex",
   justifyContent: "center",
   alignItems: "end",
