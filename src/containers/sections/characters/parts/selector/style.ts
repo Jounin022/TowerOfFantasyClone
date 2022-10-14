@@ -50,26 +50,12 @@ export const characterOption  = styled('button',{
     flexDirection: 'column',
     left:"3%",
   },
-  // "&:after": {
-    //   content: '',
-  //   position: "absolute",
-  //   width: '120px',
-  //   height: "30px",
-  // },
-  // "&:before": {
-    //   content: '',
-    //   position: "absolute",
-    //   width: '120px',
-    //   height: "30px",
-    // },
-  
     gap:15,
     overflow: 'hidden',
-  position: 'relative',
-  // bgg:true,
-  padding:5,
-  display: 'flex',
-  justifyContent:'space-around',
-  alignItems: 'center', 
+    position: 'relative',
+    padding:5,
+    display: 'flex',
+    justifyContent:'space-around',
+    alignItems: 'center', 
   })
   

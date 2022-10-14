@@ -50,7 +50,6 @@ export const ChangeButton = ({activePage,activeCharacter,characters,simulacrum,s
             zIndex: simulacrum ? "3" : "2" ,
             bg: {i: simulacrum ?   activeCBSimulacrum :  inactiveCBSimulacrum,s: simulacrum ?  "100%" : "90%"}
         }}
-        // css={{bg:{i:characters[activeCharacter].tab,s:"contain",p:"left"}}}
         />
         
        </S.changeButtonWrapper>

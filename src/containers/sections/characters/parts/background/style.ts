@@ -1,6 +1,7 @@
 import { styled } from 'styles/stitches.config';
+import { ResponsiveImage } from "utils/functions";
 
-export const charBackground = styled('div', {
+export const charBackground = styled(ResponsiveImage, {
     position: "absolute",
     bottom: 0,
     left: 0,
@@ -15,21 +16,6 @@ export const charBackground = styled('div', {
         top:0,
       }
     },
-    "@tablet":{
-      bottom: 0,
-      top: 'unset',
-      width: "100%",
-      height: "66%",
-    },
-  
-    "@desktop":{
-      bottom: 0,
-      top: 'unset',
-      width: "100%",
-      minWidth: '950px',
-      height: "66%",
-    },
-  
     "&:after": {
       opacity: 0,
       content: '',
@@ -41,3 +27,4 @@ export const charBackground = styled('div', {
     },
   
   });
+  export const charBackgroundImage = styled(ResponsiveImage)

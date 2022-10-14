@@ -1,7 +1,8 @@
 
 import { styled } from "styles/stitches.config";
+import { ResponsiveImage } from "utils/functions";
 
-export const weapon = styled('div', {
+export const weapon = styled(ResponsiveImage, {
     "@mobile":{
       filter: 'drop-shadow(0 0 0.75rem black)',
     },

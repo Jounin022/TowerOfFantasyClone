@@ -10,7 +10,7 @@ const isTablet  = (actualWidth:number) => actualWidth > 768 && actualWidth < 102
 const isDesktop  = (actualWidth:number) => actualWidth > 1024
 
 export const DeviceContext = createContext({} as IDevice)
-export const DeviceProvider = ({children}:any) => {
+export const DeviceProvider = ({children}:HTMLElement) => {
     const [currentDevice, setCurrentDevice] = useState<IDevice>({currentDeviceSize:[0,0], currentDeviceName:'mobile'});
 
     useLayoutEffect(() => {

@@ -13,16 +13,6 @@ export const background = styled("section", {
   backgroundSize: "cover",
   overflow: "hidden",
   zIndex:0,
-  "@mobile": {
-    backgroundImage: `url('/assets/images/page2/p6-bg-m.jpg')`,
-    transition: "500ms all ease-in-out ",
-  },
-  "@tablet": {
-    backgroundImage: `url('/assets/images/page2/p6-bg.jpg')`,
-    backgroundPosition: "center",
-  },
-  "@desktop": {
-  },
 });
 
 export const title = styled("div", {
@@ -31,9 +21,7 @@ export const title = styled("div", {
   backgroundPosition: "center",
   backgroundSize: "100% 100%",
   maxWidth: "450px",
-  // objectFit: "contain",
   "@mobile": {
-    // backgroundImage: `url('/assets/images/page2/p6-title-m.png')`,
     width: "260px",
     height: "60px",
     right: "auto",
@@ -46,7 +34,6 @@ export const title = styled("div", {
     left: "7%",
   },
   "@desktop": {
-    // backgroundImage: `url('/assets/images/page2/p6-title.png')`,
     width: "550px",
     height: "70px",
     opacity: "100%",

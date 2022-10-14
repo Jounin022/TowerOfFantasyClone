@@ -1,8 +1,18 @@
+import { ResponsiveImage } from "utils/functions";
 import * as S from "./notices.styles";
-// import
+
+const BackgroundImage = ResponsiveImage
+// const BackgroundImage = ResponsiveImage
+
 export const Notices = () => {
   return (
     <S.background id="section-3">
+      <BackgroundImage
+          mobile={{img:"/assets/images/page2/p6-bg-m.jpg", objFit:"cover"}}
+          tablet={{img:"/assets/images/page2/p6-bg.jpg", objFit:"cover"}}
+          desktop={{img:"/assets/images/page2/p6-bg.jpg", objFit:"fill"}}  
+        />
+
       <S.title id="teste"/>
       <S.panel>
         <S.imagePanel />
@@ -15,14 +25,9 @@ export const Notices = () => {
         <S.article
            className="tal"
            onMouseEnter={(e) => {
-            //  document.documentElement.style.overflow = "scroll";
-            // console.log("this",this);
-            // console.log("document",document.documentElement);
           }}
            onMouseLeave={(e) => {
              document.documentElement.style.overflow = "hidden";
-            // console.log("this",this);
-            // console.log("document",document.documentElement);
           }}
         >
           <ul style={{ margin: "0px", padding: "0px" }}>
@@ -31,24 +36,6 @@ export const Notices = () => {
             </S.li>
             <S.li>
               <p>Anúncio: Entrega de compras incompletas</p> 2022.8.15
-            </S.li>
-            <S.li>
-              <p>Uma carta aos Errantes</p> 2022.8.11
-            </S.li>
-            <S.li>
-              <p>Uma carta aos Errantes</p> 2022.8.11
-            </S.li>
-            <S.li>
-              <p>Uma carta aos Errantes</p> 2022.8.11
-            </S.li>
-            <S.li>
-              <p>Uma carta aos Errantes</p> 2022.8.11
-            </S.li>
-            <S.li>
-              <p>Uma carta aos Errantes</p> 2022.8.11
-            </S.li>
-            <S.li>
-              <p>Uma carta aos Errantes</p> 2022.8.11
             </S.li>
             <S.li>
               <p>Uma carta aos Errantes</p> 2022.8.11

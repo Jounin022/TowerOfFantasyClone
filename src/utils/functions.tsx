@@ -1,6 +1,5 @@
 import { DeviceContext, IDevice } from "contexts/device";
-import { useDevice } from "hooks/useDevice";
-import Image from "next/image";
+import Image from "next/future/image";
 
 type ImgElementStyle = NonNullable<JSX.IntrinsicElements["img"]["style"]>;
 
@@ -22,25 +21,29 @@ type CommonImage = {
 
 interface IImage {
   alt?:string;
+  imgCss?:ImgElementStyle;
   'mobile'?: CommonImage;
   'tablet'?: CommonImage;
   'desktop'?: CommonImage;
 }
 
-
-export const getResponsiveImage = (presets: IImage) => {
+export const ResponsiveImage = (presets: IImage) => {
+  // console.log(presets.css)
   return (
     <DeviceContext.Consumer>
-      {( currentDevice ) => <Image
+      {( currentDevice ) => presets[currentDevice.currentDeviceName]?.img ? <Image
         src={presets[currentDevice.currentDeviceName]?.img || ""}
-        layout="fill"
+        fill
+        style={{
+          objectFit:presets[currentDevice.currentDeviceName]?.objFit,
+          objectPosition:presets[currentDevice.currentDeviceName]?.objPosition,
+          ...presets.imgCss
+        }}
         quality={presets[currentDevice.currentDeviceName]?.quality || 75}
-        objectFit={presets[currentDevice.currentDeviceName]?.objFit}
-        objectPosition={presets[currentDevice.currentDeviceName]?.objPosition}
         placeholder="blur"
-        alt={presets.alt}
+        alt={presets.alt || "image"}
         blurDataURL={presets[currentDevice.currentDeviceName]?.img.toString()}
-      />}
+      /> : <></>}
     </DeviceContext.Consumer>
     )
 };

@@ -1,4 +1,5 @@
 import { styled } from "styles/stitches.config";
+import { ResponsiveImage } from "utils/functions";
 
 export const dialogWrapper = styled('div', {
    
@@ -12,16 +13,13 @@ export const dialogWrapper = styled('div', {
      position:"absolute",
      left:"200px",
     },
-    "@tablet":{
-      // display: 'block',
-    },
     "@desktop":{
       display: 'block',
     },
   
   })
   
-  export const dialog = styled('div', {
+  export const dialog = styled(ResponsiveImage, {
   width:'100%',
   height:'100%',
   filter: 'drop-shadow(0 0 2rem black)',
