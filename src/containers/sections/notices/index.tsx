@@ -1,13 +1,14 @@
+import { useCharacter } from "hooks/useCharacter";
 import { ResponsiveImage } from "utils/functions";
 import * as S from "./notices.styles";
 
 const BackgroundImage = ResponsiveImage
 // const BackgroundImage = ResponsiveImage
-
 export const Notices = () => {
+const {activeCharacter} = useCharacter()
   return (
     <S.background id="section-3">
-      <BackgroundImage
+      <S.backgroundImage
           mobile={{img:"/assets/images/page2/p6-bg-m.jpg", objFit:"cover"}}
           tablet={{img:"/assets/images/page2/p6-bg.jpg", objFit:"cover"}}
           desktop={{img:"/assets/images/page2/p6-bg.jpg", objFit:"fill"}}  
@@ -15,7 +16,11 @@ export const Notices = () => {
 
       <S.title id="teste"/>
       <S.panel>
-        <S.imagePanel />
+        <S.imagePanel imgCss={{filter:`hue-rotate(${activeCharacter.hueRotate})`}}
+          mobile={{img:"/assets/images/page2/p6-main-m.png", objFit:"fill"}}
+          tablet={{img:"/assets/images/page2/p6-main-m.png", objFit:"fill"}}
+          desktop={{img:"/assets/images/page2/p6-main.png", objFit:"fill"}}  
+        />
         <S.innerAside>
           <S.button>NEWS</S.button>
           <S.button>BULLETIN</S.button>

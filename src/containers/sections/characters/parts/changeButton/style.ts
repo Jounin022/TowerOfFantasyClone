@@ -19,6 +19,7 @@ export const changeButtonWrapper = styled('div', {
       top:"20%",
       left:"50px",
     },
+
   
   })
   
@@ -32,6 +33,7 @@ export const changeButtonWrapper = styled('div', {
   export const changeButton = styled('div', {
   width:'80%',
   transition: 'all 0.5s ease-in-out',
+  transitionProperty:'top,right,bottom,left',
   height:'50%',
   position:'absolute',
   })

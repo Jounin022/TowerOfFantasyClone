@@ -1,5 +1,6 @@
 import {
   createContext,
+  ReactNode,
   useEffect,
   useState,
   WheelEvent,
@@ -8,11 +9,11 @@ import {
 interface sectionInterface {
   activePage: number;
   setActivePage: (page: number) => void;
-  onScroll: (event: any) => void;
+  onScroll: (event: WheelEvent<HTMLElement | undefined>) => void;
 }
 export const SectionContext = createContext({} as sectionInterface);
 
-export const SectionProvider = ({ children }: any) => {
+export const SectionProvider = ({ children }: {children:ReactNode}) => {
   const [activePage, setActivePage] = useState<number>(1);
   
   const onScroll = (e: WheelEvent<HTMLElement | undefined>) => {

@@ -12,10 +12,18 @@ import ActiveCBCharacter from "../../../public/assets/images/page4/p4-column-cha
 import InactiveCBCharacter from "../../../public/assets/images/page4/p4-column-character.png";
 import changeToCharacter from "../../../public/assets/images/page4/change-character.png";
 import changeToSimulacrum from "../../../public/assets/images/page4/change-simulacrum.png";
+import Background from "../../../public/assets/images/page4/background.png";
+import Background_M from "../../../public/assets/images/page4/background-m.png";
+import Background_Color from "../../../public/assets/images/page4/background-color.png";
+import Background_Color_M from "../../../public/assets/images/page4/background-color-m.png";
 
 export {
   UpArrow,
   DownArrow,
+  Background,
+  Background_M,
+  Background_Color,
+  Background_Color_M,
   // CharacterTitle,
   // SimulacrumTitle,
   ActiveBorder,

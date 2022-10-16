@@ -1,3 +1,4 @@
+import { styled } from "styles/stitches.config";
 import { DeviceContext, IDevice } from "contexts/device";
 import Image from "next/future/image";
 
@@ -27,18 +28,22 @@ interface IImage {
   'desktop'?: CommonImage;
 }
 
+const Test = styled(Image,{
+
+})
+
 export const ResponsiveImage = (presets: IImage) => {
-  // console.log(presets.css)
   return (
     <DeviceContext.Consumer>
-      {( currentDevice ) => presets[currentDevice.currentDeviceName]?.img ? <Image
+      {( currentDevice ) => presets[currentDevice.currentDeviceName]?.img ? <Test
         src={presets[currentDevice.currentDeviceName]?.img || ""}
         fill
-        style={{
+        css={{
           objectFit:presets[currentDevice.currentDeviceName]?.objFit,
           objectPosition:presets[currentDevice.currentDeviceName]?.objPosition,
           ...presets.imgCss
         }}
+        sizes="(max-width: 1920px) 100vw,100vw"
         quality={presets[currentDevice.currentDeviceName]?.quality || 75}
         placeholder="blur"
         alt={presets.alt || "image"}

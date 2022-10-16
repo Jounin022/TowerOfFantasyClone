@@ -2,9 +2,11 @@
 import { styled } from "styles/stitches.config";
 import { ResponsiveImage } from "utils/functions";
 
-export const weapon = styled(ResponsiveImage, {
+export const weapon = styled(ResponsiveImage)
+export const weaponStyle = () => {
+  return {
     "@mobile":{
-      filter: 'drop-shadow(0 0 0.75rem black)',
+      filter: 'drop-shadow(0 0 0.75rem rgba(0,0,0,1))',
     },
     "@desktop":{
       filter: 'none',
@@ -17,7 +19,8 @@ export const weapon = styled(ResponsiveImage, {
     bottom: 0,
     right: 0,
     transition: "all 1s ease-in-out",
-  });
+  } as any
+}
   
   export const weaponWrapper  = styled('div',{
     bottom: 0,

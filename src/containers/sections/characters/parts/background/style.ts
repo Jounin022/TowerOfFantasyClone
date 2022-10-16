@@ -1,30 +1,24 @@
-import { styled } from 'styles/stitches.config';
+import { styled , css } from 'styles/stitches.config';
+import { ICharacter } from 'utils/characters/types';
 import { ResponsiveImage } from "utils/functions";
 
-export const charBackground = styled(ResponsiveImage, {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    transition: "all 1s ease-in-out",
-    "@mobile":{
-      width: "100%",
-      height: "100%",
-      bottom: 'unset',
-      top:0,
-      "&:after": {
-        bottom: 'unset',
-        top:0,
-      }
-    },
-    "&:after": {
-      opacity: 0,
-      content: '',
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-      position: "absolute",
-      width: "100%",
-      height: "100%",
-    },
-  
-  });
-  export const charBackgroundImage = styled(ResponsiveImage)
+export const charBackground = styled(ResponsiveImage);
+export const bgFadeStyle = (actvPage:number,charPg:number) => {
+  return {
+    transition: `opacity ${actvPage === charPg ? "1" : "0.4"}s  ease-in-out 0s`,
+    opacity: 0.2
+    }
+}
+export const bgStyle = (actvPage:number,charPg:number) => {
+  return { 
+    transition: `opacity ${actvPage === charPg ? "1" : "0.4"}s  ease-in-out 0s`,
+    opacity: 0.90
+    }
+}
+export const bgColorStyle = (actvPage:number,charPg:number,activeCharacter:ICharacter) => {
+  return { 
+    filter: `hue-rotate(${activeCharacter.hueRotate})`,
+    transition: `opacity ${actvPage === charPg ? "1" : "0.4"}s  ease-in-out 0s`,
+    opacity: 0.90
+    }
+}

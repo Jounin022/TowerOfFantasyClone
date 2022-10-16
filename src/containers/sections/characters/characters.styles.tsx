@@ -1,17 +1,20 @@
+import { ResponsiveImage } from 'utils/functions';
 import { styled } from '../../../styles/stitches.config';
 
-export const background = styled('section', {
-  backgroundImage: "url('/assets/images/page4/p4-bg.jpg')",
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
+export const section = styled('section', {
+  // backgroundImage: "url('/assets/images/page4/p4-bg.jpg')",
+  // backgroundSize: 'cover',
+  // backgroundPosition: 'center',
+  // backgroundRepeat: 'no-repeat',
+  // objectFit: 'contain',
   width: 'auto',
   height: '100vh',
   position: 'relative',
-  backgroundRepeat: 'no-repeat',
-  objectFit: 'contain',
   display: 'flex',
   overflow: 'hidden',
 });
+
+export const backgroundImage = styled(ResponsiveImage);
 
 export const titleWrapper = styled("div",{
   position:"absolute",

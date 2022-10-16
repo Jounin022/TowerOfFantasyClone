@@ -1,8 +1,6 @@
 export interface ICharacter {
     number: number;
     name: string;
-    background: string;
-    background_M: string;
     fade: string;
     fade_M: string;
     img: string;
@@ -15,5 +13,6 @@ export interface ICharacter {
     mainColors: {
         primary:string
     };
-    audio: string;
+    hueRotate?: string; // property set to change hue from blue to character main color
+    audio?: string;
 }

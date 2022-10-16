@@ -3,18 +3,17 @@ import { ICharacter } from "utils/characters/types";
 import { CHARACTER_PAGE_NUMBER } from "../../index"
 import { activeCBCharacter, activeCBSimulacrum , inactiveCBCharacter , inactiveCBSimulacrum, characterArrow, simulacrumArrow } from "characters/index"
 import * as S from "./style";
+import { useCharacter } from "hooks/useCharacter";
 
 interface DialogProps {
     activePage:number,
-    activeCharacter:number,
-    characters:ICharacter[],
     simulacrum:boolean,
     setSimulacrum:(arg:boolean)=>void,
 }
 
 
-export const ChangeButton = ({activePage,activeCharacter,characters,simulacrum,setSimulacrum}:DialogProps) => { 
-    
+export const ChangeButton = ({activePage,simulacrum,setSimulacrum}:DialogProps) => { 
+    const {activeCharacter} = useCharacter()
     return (
         <S.changeButtonWrapper  css={{
             transform: activePage === CHARACTER_PAGE_NUMBER ? " unset" : "translateX(-100%)",
@@ -37,7 +36,7 @@ export const ChangeButton = ({activePage,activeCharacter,characters,simulacrum,s
             top: simulacrum ? "20%" : "50%" ,
             right: simulacrum ? "0%" : "20%" ,
             zIndex: simulacrum ? "2" : "3" ,
-            bg: {i: simulacrum ?  inactiveCBCharacter :   activeCBCharacter , s: simulacrum ?  "90%" : "100%"}
+            bg: {i: simulacrum ?  inactiveCBCharacter :   activeCBCharacter , s: simulacrum ?  "80%" : "90%"}
         }}
         />
 
@@ -45,10 +44,11 @@ export const ChangeButton = ({activePage,activeCharacter,characters,simulacrum,s
         onClick={()=>setSimulacrum(!simulacrum)}
         role="button"
         css={{
+            filter:`hue-rotate(${activeCharacter.hueRotate})`,
             top:  simulacrum ? "50%" : "20%",
             right: simulacrum ?  "20%" : "0%",
             zIndex: simulacrum ? "3" : "2" ,
-            bg: {i: simulacrum ?   activeCBSimulacrum :  inactiveCBSimulacrum,s: simulacrum ?  "100%" : "90%"}
+            bg: {i: simulacrum ?   activeCBSimulacrum :  inactiveCBSimulacrum,s: simulacrum ?  "90%" : "80%"}
         }}
         />
         

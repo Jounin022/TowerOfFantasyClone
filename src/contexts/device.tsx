@@ -1,4 +1,4 @@
-import { createContext, useLayoutEffect, useState } from "react";
+import { createContext, ReactHTMLElement, ReactNode, useLayoutEffect, useState } from "react";
 
 export interface IDevice {
     currentDeviceSize:[number,number];
@@ -10,7 +10,7 @@ const isTablet  = (actualWidth:number) => actualWidth > 768 && actualWidth < 102
 const isDesktop  = (actualWidth:number) => actualWidth > 1024
 
 export const DeviceContext = createContext({} as IDevice)
-export const DeviceProvider = ({children}:HTMLElement) => {
+export const DeviceProvider = ({children}:{children:ReactNode}) => {
     const [currentDevice, setCurrentDevice] = useState<IDevice>({currentDeviceSize:[0,0], currentDeviceName:'mobile'});
 
     useLayoutEffect(() => {

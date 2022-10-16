@@ -1,43 +1,47 @@
 import * as S from "./style";
-import { activeBorder } from "utils/characters/index";
+import { createPortal } from "react-dom"; 
+
 import { ICharacter } from "utils/characters/types";
 import { CHARACTER_PAGE_NUMBER } from "../../index"
+import { useEffect, useState } from "react";
+import { useCharacter } from "hooks/useCharacter";
 
 interface BackgroundProps {
     activeCharacter: number,
     characters: ICharacter[],
     activePage:number,
-    setActiveCharacter: (charNum:number) => void,
 }
 
-export const Selector = ({activeCharacter,characters,setActiveCharacter, activePage}:BackgroundProps) => { 
+export const Selector = ({activeCharacter,characters, activePage}:BackgroundProps) => { 
+  const { setActiveCharacter } = useCharacter()
+    const [renderSideMenu,setRenderSideMenu] = useState<boolean>(false)
+    const [renderedDocument,setRenderDocument] = useState<boolean>(false)
     
-    const charOptions = characters.map((opt:ICharacter) => {
-        return {
-            name: opt.name,
-            active:   opt.active,
-            inactive: opt.inactive,
-            number:   opt.number,
-          };
-    });
+    useEffect(()=>{
+      if(activePage >= CHARACTER_PAGE_NUMBER){
+        setTimeout(()=>{setRenderSideMenu(true)},100)
+      } else {
+        setRenderSideMenu(false)
+      }
+    },[activePage])
 
-    return (
-        <S.selectorWrapper>
-        {charOptions.map((char) => {
-          return (
-            <S.characterOption
-              css={{
-                opacity: activePage === CHARACTER_PAGE_NUMBER ? 1 : 0,
-                bg: {i: char.number === activeCharacter ? char.active : char.inactive},
-                "&:after": {bg: {i: char.number === activeCharacter ? activeBorder : "unset"}},
-              }}
-              title={char.name}
-              key={`${char.name}-opt`}
-              type="button"
-              onClick={() => setActiveCharacter(char.number)}
-            />
-          );
-        })}
-      </S.selectorWrapper>
+    useEffect(()=>{
+      setRenderDocument(!!document)
+    },[])
 
-  )}
+    return renderedDocument && createPortal(
+      <S.selectorWrapper 
+       css={S.handleSelectorWrapperStyle(renderSideMenu,activePage,CHARACTER_PAGE_NUMBER)}
+      >
+        {characters.map((char) => 
+        <S.characterOption 
+         css={S.handleCharacterOptionStyle(char,activeCharacter)}
+         title={char.name}
+         key={`${char.name}-opt`}
+         type="button"
+         onClick={() => setActiveCharacter(char)}
+        />
+        )}
+      </S.selectorWrapper>,
+      document.getElementById('main') || document.body) || <></>
+}

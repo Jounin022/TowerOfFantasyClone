@@ -1,5 +1,6 @@
 import { styled } from "../../../styles/stitches.config";
 import Image from "next/image";
+import { ResponsiveImage } from "utils/functions";
 
 export const background = styled("section", {
   // scrollSnapAlign: 'start',
@@ -14,6 +15,8 @@ export const background = styled("section", {
   overflow: "hidden",
   zIndex:0,
 });
+
+export const backgroundImage = styled(ResponsiveImage);
 
 export const title = styled("div", {
   position: "absolute",
@@ -63,30 +66,11 @@ export const panel = styled("div", {
   },
 });
 
-export const imagePanel = styled("div",{
-  backgroundRepeat: "no-repeat",
-  backgroundPosition: "center",
-  backgroundSize: "100% 100%",
+export const imagePanel = styled(ResponsiveImage,{
   zIndex:2,
-  height: "100%",
-  width: "100%",
   position: "absolute",
   top: "0px",
   left: "0px",
-  "@mobile": {
-    backgroundImage: `url('/assets/images/page2/p6-main-m.png')`,
-  },
-  "@desktop": {
-    backgroundImage: `url('/assets/images/page2/p6-main.png')`,
-  },
-  // variants:{
-  // mobile:{
-  //   true:{bg:{i:`url('/assets/images/page2/p6-main-m.png')`,}}
-  // },
-  // desktop:{
-  //   true:{bgg:true}
-  // }
-// }
 })
 
 export const imageBanner = styled("div", {

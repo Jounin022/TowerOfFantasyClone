@@ -28,7 +28,7 @@ const Main = styled('main',{
 
 
   return (
-    <main onWheel={(e) => onScroll(e)}>
+    <main id="main" onWheel={(e) => onScroll(e)}>
       <Navbar />
       <Aside />
       <Home />

@@ -5,6 +5,7 @@ import * as Claudia from "characters/claudia";
 import * as Samir from "characters/samir";
 
 import * as Items from "characters/items";
+import { ICharacter } from "./types";
 
 export const activeBorder = Items.ActiveBorder.src
 export const activeCBCharacter = Items.ActiveCBCharacter.src
@@ -14,6 +15,11 @@ export const inactiveCBSimulacrum = Items.InactiveCBSimulacrum.src
 export const characterArrow = Items.changeToCharacter.src
 export const simulacrumArrow = Items.changeToSimulacrum.src
 
+export const Background = Items.Background.src
+export const Background_M = Items.Background_M.src
+export const Background_Color = Items.Background_Color.src
+export const Background_Color_M = Items.Background_Color_M.src
+
 export const downArrow =Items.DownArrow
 export const upArrow =Items.UpArrow
 
@@ -21,8 +27,6 @@ export const characters = [
   {
     number: 0,
     name: "Nemesis",
-    background: Nemesis.Background.src,
-    background_M: Nemesis.Background_M.src,
     fade: Nemesis.Fade.src,
     fade_M: Nemesis.Fade_M.src,
     img: Nemesis.Main.src,
@@ -32,14 +36,14 @@ export const characters = [
     weapon: Nemesis.Weapon.src,
     weapon_M: Nemesis.Weapon_M.src,
     tab: Nemesis.Tab.src,
+    hueRotate: "-203deg",
     mainColors: { primary: "#fff" },
-    audio: Nemesis.Audio,
+    // audio: Nemesis.Audio,
   },
   {
     number: 1,
     name: "Meryl",
-    background: Meryl.Background.src,
-    background_M: Meryl.Background_M.src,
+    hueRotate: "0deg",
     fade: Meryl.Fade.src,
     fade_M: Meryl.Fade_M.src,
     img: Meryl.Main.src,
@@ -50,13 +54,12 @@ export const characters = [
     weapon_M: Meryl.Weapon_M.src,
     tab: Meryl.Tab.src,
     mainColors: { primary: "#fff" },
-    audio: Meryl.Audio,
+    // audio: Meryl.Audio,
   },
   {
     number: 2,
     name: "Claudia",
-    background: Claudia.Background.src,
-    background_M: Claudia.Background_M.src,
+    hueRotate: "200deg",
     fade: Claudia.Fade.src,
     fade_M: Claudia.Fade_M.src,
     img: Claudia.Main.src,
@@ -72,9 +75,8 @@ export const characters = [
   },
   {
     number: 3,
+    hueRotate: "227deg",
     name: "Samir",
-    background: Samir.Background.src,
-    background_M: Samir.Background_M.src,
     fade: Samir.Fade.src,
     fade_M: Samir.Fade_M.src,
     img: Samir.Main.src,
@@ -88,4 +90,4 @@ export const characters = [
     audio: Meryl.Audio,
     // audio: Samir.Audio,
   },
-];
+] as ICharacter[];

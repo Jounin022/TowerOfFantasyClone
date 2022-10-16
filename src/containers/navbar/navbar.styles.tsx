@@ -5,11 +5,11 @@ export const navbar = styled("nav", {
   display: "flex",
   position: "fixed",
   zIndex:10,
- 
+//  display:'none',
       '@mobile': {
         opacity: 0,
         transition: '1s ',
-        // display: 'none',
+        display: 'none',
       },
       "@tablet": {
         opacity: 0,
