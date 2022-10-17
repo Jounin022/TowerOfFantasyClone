@@ -15,8 +15,9 @@ export const changeButtonWrapper = styled('div', {
       width:"20%",
       minWidth: '230px',
       maxWidth: '300px',
-      height:"13%",
-      top:"20%",
+      height:"12%",
+      // bgg:true,  
+      top:"23%",
       left:"50px",
     },
 

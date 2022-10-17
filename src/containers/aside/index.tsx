@@ -17,22 +17,20 @@ export const Aside = () => {
         activeImg={ActiveTop}
         inactiveImg={InactiveTop}
         isActive={activePage > 1}
-        in="sideBarTop"
         alt="Go previous page."
+        w={25}
+        h={25}
       />
       <S.ul css={{ transform: `translateY(${245 + activePage * -70}px)` }}>
         {NavOptionsArr.map((options) => {
           return (
             <Option
               key={options.page}
-              activeImg={options.activeNumber}
-              inactiveImg={options.inactiveNumber}
-              alt={options.alt}
-              in="sideBar"
+              text={options.number || ""}
               w={30}
               h={30}
               isActive={activePage === options.page}
-              action={() => setActivePage(options.page)}
+              action={() => setActivePage(options.page || 0)}
             />
           );
         })}
@@ -42,7 +40,8 @@ export const Aside = () => {
         activeImg={ActiveBottom}
         inactiveImg={InactiveBottom}
         isActive={activePage < 6}
-        in="sideBarBottom"
+        w={25}
+        h={25}
         alt="Go previous page."
       />
     </S.aside>

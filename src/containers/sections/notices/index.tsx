@@ -28,7 +28,14 @@ const {activeCharacter} = useCharacter()
         </S.innerAside>
 
         <S.article
-           className="tal"
+           css={{ "&::-webkit-scrollbar": {
+            width: "10px",
+            backgroundColor: activeCharacter.mainColors.primary,
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: activeCharacter.mainColors.secondary,
+          }
+        }}
            onMouseEnter={(e) => {
           }}
            onMouseLeave={(e) => {

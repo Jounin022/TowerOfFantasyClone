@@ -44,6 +44,24 @@ export const title = styled("div", {
   },
 });
 
+
+// backgroundRepeat: "no-repeat",
+//   backgroundPosition: "center",
+//   backgroundSize: "100% 100%",
+//   zIndex:2,
+//   height: "100%",
+//   width: "100%",
+//   position: "absolute",
+//   top: "0px",
+//   left: "0px",
+//   "@mobile": {
+//     backgroundImage: `url('/assets/images/page2/p6-main-m.png')`,
+//   },
+//   "@desktop": {
+//     backgroundImage: `url('/assets/images/page2/p6-main.png')`,
+//   },
+
+
 export const panel = styled("div", {
   width: "90%",
   minWidth:300,

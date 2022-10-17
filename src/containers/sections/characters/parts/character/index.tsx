@@ -11,7 +11,6 @@ interface CharacterProps {
 export const Character = ({activePage,activeCharacter,characters}:CharacterProps) => { 
 // colocar descrição exata da imagem para cada linguagem , como "personagem tal fazendo arminha do bonoro"
     return <S.character 
-            imgCss={{filter: "drop-shadow(0 0 2rem purple)"}}
             mobile={{img:characters[activeCharacter].img_M, objFit:"cover",quality:100 }} 
             tablet={{img:characters[activeCharacter].img, objFit:"cover" ,quality:100}} 
             desktop={{img:characters[activeCharacter].img, objFit:"cover" ,quality:100}}

@@ -66,15 +66,10 @@ export const subBackground = styled("div", {
 });
 
 
-export const title = styled("div", {
-  display: "flex",
+export const TitleWrapper = styled("div", {
   position: "absolute",
-  width: 100,
-  height: 100,
-  backgroundRepeat: "no-repeat",
-
   "@mobile": {
-    width: "max(40%,500px)",
+    width: "max(15%,260px)",
     maxWidth: "360px",
     maxHeight: "70px",
     height: "80px",
@@ -82,13 +77,11 @@ export const title = styled("div", {
     left: 15,
     top: "15px",
   },
-
   "@tablet": {
     height: "10vw",
   },
-  
   "@desktop": {
-    left: 60,
+    left: '12%',
     top: "100px",
   },
 });
@@ -101,7 +94,6 @@ export const floatingTab = styled("article", {
   justifyContent: "end",
   position: "absolute",
   zIndex: 5,
-  
   "& h2": {
     display: "flex",
     alignItems: "center",
@@ -156,8 +148,7 @@ export const floatingTab = styled("article", {
     paddingLeft: "30px",
     paddingTop: "12px",
     left: "140px",
-    width: "",
-    minWidth: "270px",
+    minWidth: "300px",
     maxWidth: "330px",
     top: "40%",
     right: "15%",

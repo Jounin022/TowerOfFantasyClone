@@ -3,7 +3,10 @@ import { useState } from "react";
 import { cities } from "../../../utils/cities";
 import Image from "next/image";
 import hands from "../../../../public/assets/images/page3/p3-flash.png";
+import { useCharacter } from "hooks/useCharacter";
+import { Title } from "components/title";
 export const About = () => {
+  const { activeCharacter } = useCharacter()
   const [selectedCity, setSelectedCity] = useState(1);
 
   const beforeOptionImg = (isActive:boolean) =>{
@@ -16,14 +19,15 @@ export const About = () => {
 
   return (
     <S.background id="section-4">
+      <S.TitleWrapper>
+        <Title title="DESCUBRA TOF" />
+      </S.TitleWrapper>
 
-      {/* <S.title /> */}
-
-      <S.floatingMainCircle>
+      <S.floatingMainCircle  css={{ filter:`hue-rotate(${activeCharacter.hueRotate})`}}>
         <Image alt="A.I.D.A symbol" src={hands} width={50} height={50} />
       </S.floatingMainCircle>    
 
-      <S.floatingTab>
+      <S.floatingTab  css={{ filter:`hue-rotate(${activeCharacter.hueRotate})`}}>
         <h2>Fundação da civilização</h2>
         <p>
           Através de um plano de colonização interestelar, os humanos criaram
@@ -35,7 +39,7 @@ export const About = () => {
         </p>
       </S.floatingTab>      
 
-      <S.bottomBackground>
+      <S.bottomBackground >
         {cities.map((city) => {
           return (
             <S.cityOption
@@ -47,6 +51,7 @@ export const About = () => {
                 width: city.isActive(selectedCity) ? '100px' : '70px',
                 height: city.isActive(selectedCity) ? '100px' : '70px',
                 "&:before": {
+                  filter: city.isActive(selectedCity) ? "none" : `hue-rotate(${activeCharacter.hueRotate})`,
                   backgroundImage: beforeOptionImg(city.isActive(selectedCity)),
                   width: city.isActive(selectedCity) ? '110px' : '90px',
                   height: city.isActive(selectedCity) ? '110px' : '90px',
@@ -55,6 +60,7 @@ export const About = () => {
                   opacity: city.isActive(selectedCity) ? "1" : "0.6",
                 },
                 "&:after": {
+                  filter: city.isActive(selectedCity) ? "none" : `hue-rotate(${activeCharacter.hueRotate})`,
                   backgroundImage: afterOptionImg(city.isActive(selectedCity)),
                   width: city.isActive(selectedCity) ? '90px' : '75px',
                   height: city.isActive(selectedCity) ? '90px' : '75px',
@@ -73,8 +79,8 @@ export const About = () => {
       </S.bottomBackground>
     
       <S.movingBackground css={{backgroundImage: `url('/assets/images/page3/discover${selectedCity}.jpg')`}}/>
-      <S.rotatingCircles />
-      <S.subBackground />
+      <S.rotatingCircles css={{ filter:`hue-rotate(${activeCharacter.hueRotate})`}} />
+      <S.subBackground css={{ filter:`hue-rotate(${activeCharacter.hueRotate})`}} />
     </S.background>
   );
 };

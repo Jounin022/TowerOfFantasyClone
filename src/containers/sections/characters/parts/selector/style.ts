@@ -52,7 +52,7 @@ export const selectorWrapper = styled("div", {
   "@tablet": {
     top: "50%",
     transform: "translateY(-45%)",
-    width: "90px",
+    width: "70px",
     height: "55vh",
     flexDirection: "column",
     left: "unset",

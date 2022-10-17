@@ -15,7 +15,7 @@ export default class Document extends NextDocument {
           <meta name="author" content="Johnny Brendow"/>
           <meta name="viewport" content="initial-scale=1.0"/>
           <style>
-          @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;400;500;600;700;800&display=swap');
           </style>
         </Head>
         <body >

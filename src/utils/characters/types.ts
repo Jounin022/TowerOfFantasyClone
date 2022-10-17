@@ -11,7 +11,8 @@ export interface ICharacter {
     weapon_M: string;
     tab: string;
     mainColors: {
-        primary:string
+        primary:string;
+        secondary:string;
     };
     hueRotate?: string; // property set to change hue from blue to character main color
     audio?: string;
