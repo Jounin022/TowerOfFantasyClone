@@ -19,7 +19,7 @@ export const navbar = styled("nav", {
         backgroundSize: "100% 100%",
         backgroundRepeat: "no-repeat",
         backgroundImage: `url('/assets/images/general/navigationBar/top.png')`,
-        height: "7vw",
+        height: "98px",
         opacity: 1,
         transition: '0s',
       },
@@ -28,32 +28,32 @@ export const navbar = styled("nav", {
 
 export const logo = styled('figure', {
   width: "15vw",
-  height: "5vw",
+  height: "70px",
   position: "relative",
   display: 'block',
+
   margin:0,
 }); 
 
 export const ul = styled('ul', {
 position: 'absolute',
-height: "3.7vw",
+height: "55px",
 margin:0,
 padding:0,
 display: "flex",
 alignItems: "center",
-justifyContent: "flex-start",
+justifyContent: "space-between",
 top: 0,
 variants:{
   position:{
     left:{
-      left: '19vw',
-      "& li":{
-        alignSelf:"end",
-        marginBottom:"15px",
-      }
+      width: "25%",
+      left: '16%',
     },
     right:{
-      left: '67vw',
+      
+      width: "25%",
+      right: '0',
     }
   }
   

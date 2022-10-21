@@ -1,5 +1,5 @@
+import { useCharacter } from 'hooks/useCharacter'
 import { globalCss } from './stitches.config'
-
 export const globalStyles = globalCss({
   'html,body': {
     margin: 0,
@@ -11,6 +11,8 @@ export const globalStyles = globalCss({
       display:'none',
     },
   },
+
+  
   "*":{
   boxSizing: 'border-box',
   },
@@ -19,7 +21,6 @@ export const globalStyles = globalCss({
     fontWeight: 400,
     fontStyle: 'normal',
    },
-   
   body:{
      height:'100vh',
   },

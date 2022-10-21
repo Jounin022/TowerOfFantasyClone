@@ -6,9 +6,8 @@ import { useEffect } from "react";
 import {styled} from "../../styles/stitches.config"
 
 export const Main = () => {
-  const { onScroll } = useSection();
-
-  // cancela ação padrão do scroll para não parar entre uma tela e outra
+  const { onScroll , activePage} = useSection();
+  
   useEffect(() => {
     document.addEventListener(
       "wheel",
@@ -26,6 +25,9 @@ const Main = styled('main',{
   // overflowY:'scroll',
 })
 
+// const isSectionRendered = (pg:number) => {
+//   return pg === activePage || pg < activePage + 2
+// }
 
   return (
     <main id="main" onWheel={(e) => onScroll(e)}>
@@ -36,6 +38,11 @@ const Main = styled('main',{
       <Notices />
       <About />
       <Features />
+      {/* {isSectionRendered(1) && <Home />}
+      {isSectionRendered(2) && <Characters />}
+      {isSectionRendered(3) && <Notices />}
+      {isSectionRendered(4) && <About />}
+      {isSectionRendered(5) && <Features />} */}
     </main>
   );
 };

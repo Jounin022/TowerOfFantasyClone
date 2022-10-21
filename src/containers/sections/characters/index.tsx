@@ -15,6 +15,7 @@ export const Characters = () => {
   
   const commonProps = {activeCharacter:activeCharacter.number,activePage,characters} 
 
+
   return (
     <S.section id="section-2">
       <S.backgroundImage

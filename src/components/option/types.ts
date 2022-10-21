@@ -9,7 +9,7 @@ type ImgOptionProps = {
     text?: never;
     isActive?: boolean;
     action: () => void;
-    line?: 1 | 0;
+    line?: never;
 }
 
 interface TextOptionProps {

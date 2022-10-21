@@ -21,7 +21,7 @@ export const titleWrapper = styled("div",{
   width:"22%",
   height:"10%",
   top: '14%',
-  left: '5%',
+  left: '9%',
   
   "@mobile":{
     display:"none",

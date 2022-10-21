@@ -2,47 +2,26 @@ import * as S from "./navbar.styles";
 import Image from "next/image";
 import { Option } from "../../components/option";
 import { useSection } from "../../hooks/useSection";
-import { NavOptionsArr , RightOptionsArr } from "../../utils/navigation/index";
 import Logo from "../../../public/assets/images/general/navigationBar/logo.png";
-import { navOptInterface } from "../../utils/navigation/index";
-
-const firstListOptions = NavOptionsArr.filter((option) => {
-  if (
-    option.page === 1 ||
-    option.page === 2 ||
-    option.page === 4 ||
-    option.page === 7
-  ) {
-    return option;
-  }
-});
+import { NavOptionsArr, RightOptionsArr } from "../../utils/navigation/index";
+import { useCharacter } from "hooks/useCharacter";
 
 export const Navbar = () => {
+  const {activeCharacter} = useCharacter()
   const { activePage, setActivePage } = useSection();
 
-  const isThirdOpt = (activePage: number, page: number)=>{
-    if(page === 3 ){
-      return activePage === 3 || activePage === 4 || activePage === 5;
+  const filteredNavOptionsArr = NavOptionsArr.filter((_,index)=>{return index <= 3}) 
+  const dropdownOptions =  NavOptionsArr.filter((_,index)=>{return index > 3})
+
+  const isOptActive = (pg:number) =>{
+    if (pg !== 4) {
+      return activePage === pg
     }
-   return activePage === page
-  }
-  
-const RenderOption = (option:navOptInterface, position:string) => {
-  //  return (
-  //  <Option
-  //   key={option.page}
-  //   line={isThirdOpt(activePage,option.page)? 1 : 0 }
-  //   activeImg={option.activeImg}
-  //   inactiveImg={option.inactiveImg}
-  //   isActive={isThirdOpt(activePage,option.page)}
-  //   action={() => setActivePage(option.page)}
-  //   // alt={option.alt}
-  //   w={option.w}
-  //   h={option.h}
-  //  /> 
-// )
-}
-  
+    if (pg === 4) {
+      return activePage === 4 || activePage === 5 || activePage === 6 || activePage === 7
+    }
+  } 
+
   return (
     <S.navbar
     >
@@ -56,39 +35,35 @@ const RenderOption = (option:navOptInterface, position:string) => {
         <figcaption hidden>Logo tower of fantasy with a sword</figcaption>
       </S.logo>
 
-      <S.ul position="left">
-        {/* {firstListOptions.map((option) =>{
+      <S.ul position="left" css={{filter: `hue-rotate(${activeCharacter.hueRotate})`}}>
+        {filteredNavOptionsArr.map((option) =>{
           return(
             <Option
             key={option.page}
-            line={isThirdOpt(activePage,option.page)? 1 : 0 }
-            activeImg={option.activeImg}
-            inactiveImg={option.inactiveImg}
-            isActive={isThirdOpt(activePage,option.page)}
-            action={() => setActivePage(option.page)}
-            alt={option.alt}
+            line={isOptActive(option.page) ? 1 : 0}
+            isActive={isOptActive(option.page)}
+            action={() => {setActivePage(option.page)}}
+            text={option.name}
             w={option.w}
             h={option.h}
           />
           )})
-        } */}
+        }
       </S.ul>
 
-      <S.ul position="right">
-      {/* {RightOptionsArr.map((option) =>{
+      <S.ul position="right" css={{filter: `hue-rotate(${activeCharacter.hueRotate})`}}>
+      {RightOptionsArr.map((option) =>{
         return (
           <Option
-          key={option.alt}
           activeImg={option.activeImg}
           inactiveImg={option.inactiveImg}
           action={() => console.log("5")}
-          in="topBarRight"
-          alt={option.alt}
+          alt={option.alt || ''}
           w={option.w}
           h={option.h}
         />
         )
-      })} */}
+      })}
       </S.ul>
     </S.navbar>
   );

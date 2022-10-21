@@ -7,42 +7,50 @@ import ActiveTop from "../../../public/assets/images/general/sidePagination/scro
 import InactiveTop from "../../../public/assets/images/general/sidePagination/prev-gray.png";
 import ActiveBottom from "../../../public/assets/images/general/sidePagination/scroll-next.png";
 import InactiveBottom from "../../../public/assets/images/general/sidePagination/next-gray.png";
+import { useCharacter } from "hooks/useCharacter";
+import { ResponsiveImage } from "utils/functions";
 
 export const Aside = () => {
+  const { activeCharacter } = useCharacter()
   const { activePage, setActivePage } = useSection();
   return (
-    <S.aside>
-      <Option
-        action={() => setActivePage(activePage > 1 ? activePage - 1 : 1 )}
-        activeImg={ActiveTop}
-        inactiveImg={InactiveTop}
-        isActive={activePage > 1}
-        alt="Go previous page."
-        w={25}
-        h={25}
-      />
+    <S.aside css={{ filter:`hue-rotate(${activeCharacter.hueRotate})`}}>
+      <ResponsiveImage />
+      <S.upArrow
+        type="button"
+        css={{
+          bg: {
+            i: activePage > 1 ? ActiveTop.src : InactiveTop.src,
+            p: "center",
+            s: "100%",
+          },
+          // filter:`hue-rotate(${activeCharacter.hueRotate})`
+        }}
+        />
       <S.ul css={{ transform: `translateY(${245 + activePage * -70}px)` }}>
         {NavOptionsArr.map((options) => {
           return (
             <Option
-              key={options.page}
-              text={options.number || ""}
-              w={30}
-              h={30}
-              isActive={activePage === options.page}
-              action={() => setActivePage(options.page || 0)}
+            key={options.page}
+            text={options.number || ""}
+            w={30}
+            h={30}
+            isActive={activePage === options.page}
+            action={() => setActivePage(options.page || 0)}
             />
-          );
-        })}
+            );
+          })}
       </S.ul>
-      <Option
-        action={() => setActivePage(activePage < 6 ? activePage + 1 : 6 )}
-        activeImg={ActiveBottom}
-        inactiveImg={InactiveBottom}
-        isActive={activePage < 6}
-        w={25}
-        h={25}
-        alt="Go previous page."
+      <S.downArrow
+        type="button"
+        css={{
+          bg: {
+            i: activePage < 7 ? ActiveBottom.src : InactiveBottom.src,
+            p: "center",
+            s: "100%",
+          },
+          // filter:`hue-rotate(${activeCharacter.hueRotate})`
+        }}
       />
     </S.aside>
   );

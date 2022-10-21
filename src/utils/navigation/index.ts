@@ -1,18 +1,23 @@
 import { StaticImageData } from "next/image";
 import * as Img from "./images";
 
-export interface navOptInterface {
-  activeImg?: StaticImageData;
-  inactiveImg?: StaticImageData;
-  alt?: string;
-  number?: string;
-  name?: string;
-  page?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+export interface navPages {
+  number: string;
+  name: string;
+  page: 1 | 2 | 3 | 4 | 5 | 6 | 7;
   w: number;
   h: number;
 }
 
-export const NavOptionsArr: navOptInterface[] = [
+export interface navTools {
+  activeImg: StaticImageData;
+  inactiveImg: StaticImageData;
+  alt: string;
+  w: number;
+  h: number;
+}
+
+export const NavOptionsArr: navPages[] = [
   {
     page: 1,
     number: "01",
@@ -35,7 +40,7 @@ export const NavOptionsArr: navOptInterface[] = [
     h: 18,
   },
   {
-    page: 4,
+    page: 4 || 5 || 6 || 7,
     number: "04",
     name: "Explorar Tof",
     w: 127,
@@ -64,40 +69,40 @@ export const NavOptionsArr: navOptInterface[] = [
   },
 ];
 
-export const RightOptionsArr: navOptInterface[] = [
+export const RightOptionsArr: navTools[] = [
   {
     activeImg: Img.MusicActive,
     inactiveImg: Img.MusicInactive,
     alt: "Turn on/off Music",
-    w: 750,
-    h: 150,
+    w: 30,
+    h: 30,
   },
   {
     activeImg: Img.Access,
     inactiveImg: Img.Access,
     alt: "Access/Login",
-    w: 750,
-    h: 150,
+    w: 30,
+    h: 30,
   },
   {
     activeImg: Img.SocialMediaActive,
     inactiveImg: Img.SocialMediaInactive,
     alt: "Social Media",
-    w: 250,
-    h: 250,
+    w: 30,
+    h: 30,
   },
   {
     activeImg: Img.LanguageActive,
     inactiveImg: Img.LanguageInactive,
     alt: "Languages",
-    w: 250,
-    h: 250,
+    w: 30,
+    h: 30,
   },
   {
     activeImg: Img.Download,
     inactiveImg: Img.Download,
     alt: "Download",
-    w: 1300,
-    h: 450,
+    w: 150,
+    h: 50,
   },
 ];

@@ -35,3 +35,21 @@ export const ul = styled('ul',{
     right: 20,
     transition: "all 500ms",
 })
+
+export const upArrow = styled("button",{
+position: "absolute",
+top:10,
+backgroundColor: "transparent",
+border: "none",
+width:'25px',
+height:'25px',
+})
+
+export const downArrow = styled("button",{
+position: "absolute",
+bottom:10,
+backgroundColor: "transparent",
+border: "none",
+width:'25px',
+height:'25px',
+})
