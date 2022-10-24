@@ -1,7 +1,7 @@
 import * as S from "./style";
 import { createPortal } from "react-dom"; 
 
-import { ICharacter } from "utils/characters/types";
+import { ICharacter } from "utils/types";
 import { CHARACTER_PAGE_NUMBER } from "../../index"
 import { useEffect, useState } from "react";
 import { useCharacter } from "hooks/useCharacter";

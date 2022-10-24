@@ -2,12 +2,15 @@ import * as S from "./navbar.styles";
 import Image from "next/image";
 import { Option } from "../../components/option";
 import { useSection } from "../../hooks/useSection";
-import Logo from "../../../public/assets/images/general/navigationBar/logo.png";
-import { NavOptionsArr, RightOptionsArr } from "../../utils/navigation/index";
+import { Logo } from "utils/assets/landing-page/navigationBar";
+import { NavOptionsArr, RightOptionsArr } from "utils/navigation";
 import { useCharacter } from "hooks/useCharacter";
+import { useDevice } from "hooks/useDevice";
+import { Top } from "utils/assets/landing-page/navigationBar"
 
 export const Navbar = () => {
-  const {activeCharacter} = useCharacter()
+  const { activeCharacter } = useCharacter()
+  const { currentDeviceName } = useDevice()
   const { activePage, setActivePage } = useSection();
 
   const filteredNavOptionsArr = NavOptionsArr.filter((_,index)=>{return index <= 3}) 
@@ -22,12 +25,13 @@ export const Navbar = () => {
     }
   } 
 
-  return (
+   return (
     <S.navbar
     >
+      <S.background desktop={{img:Top.src, objFit:"fill"}}/>
       <S.logo>
         <Image
-          src={Logo}
+          src={Logo.src}
           alt="Logo from tower of fantasy"
           layout="fill"
           objectFit="contain"

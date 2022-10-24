@@ -1,21 +1,17 @@
 import * as S from "./aside.styles";
 import { Option } from "../../components/option";
 import { useSection } from "../../hooks/useSection";
-import { NavOptionsArr } from "../../utils/navigation/index";
-
-import ActiveTop from "../../../public/assets/images/general/sidePagination/scroll-prev.png";
-import InactiveTop from "../../../public/assets/images/general/sidePagination/prev-gray.png";
-import ActiveBottom from "../../../public/assets/images/general/sidePagination/scroll-next.png";
-import InactiveBottom from "../../../public/assets/images/general/sidePagination/next-gray.png";
+import { NavOptionsArr } from "utils/navigation";
+import {InactiveBottom,ActiveBottom,ActiveTop,InactiveTop} from "utils/assets/landing-page/sidePagination"
 import { useCharacter } from "hooks/useCharacter";
-import { ResponsiveImage } from "utils/functions";
+import { ScrollBox } from "utils/assets/landing-page/sidePagination"
 
 export const Aside = () => {
   const { activeCharacter } = useCharacter()
   const { activePage, setActivePage } = useSection();
   return (
     <S.aside css={{ filter:`hue-rotate(${activeCharacter.hueRotate})`}}>
-      <ResponsiveImage />
+      <S.background desktop={{img:ScrollBox.src, objFit:"fill"}} />
       <S.upArrow
         type="button"
         css={{

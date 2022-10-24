@@ -1,6 +1,7 @@
+import { ResponsiveImage } from "utils/functions";
 import { styled, keyframes } from "../../../styles/stitches.config";
-
-const rotate = keyframes({
+import { Text_Title } from "utils/assets/landing-page/sections/about"
+export const rotate = keyframes({
   "100%": { rotate: "360deg" },
 });
 
@@ -19,47 +20,28 @@ const slide = keyframes({
   "100%": { backgroundPosition: "left top  100px" },
 });
 
-export const background = styled("section", {
-  // scrollSnapAlign: 'start',
+export const section = styled("section", {
   width: "auto",
   height: "100vh",
   position: "relative",
-  backgroundRepeat: "no-repeat",
   objectFit: "contain",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   overflow: "hidden",
-
-  "@mobile": {
-    backgroundImage: `url('/assets/images/page3/p3-top.png')`,
-    backgroundSize: "100%",
-  },
-
-  "@desktop": {
-    backgroundImage: `url('/assets/images/page3/p3-bg.png')`,
-    backgroundSize: "100% 100%",
-  },
 });
+
+export const background = styled(ResponsiveImage)
 
 export const subBackground = styled("div", {
   position: "absolute",
   width: "1500px",
   height: "100%",
-  backgroundImage: `url('/assets/images/page3/p3-bg-r.png')`,
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "100% 100%",
   bottom:"0px",
   right: "-420px",
-
   "@mobile": {
     display: "none",
   },
-
-  "@tablet": {
-    display: "none",
-  },
-
   "@desktop": {
     display: "block",
   },
@@ -86,6 +68,12 @@ export const TitleWrapper = styled("div", {
   },
 });
 
+export const flash = styled(ResponsiveImage)
+
+export const rotatingBackground = styled(ResponsiveImage)
+
+export const tabBackground = styled(ResponsiveImage)
+
 export const floatingTab = styled("article", {
   display: "flex",
   flexDirection: "column",
@@ -97,7 +85,7 @@ export const floatingTab = styled("article", {
   "& h2": {
     display: "flex",
     alignItems: "center",
-    backgroundImage: "url('/assets/images/page3/p3-text-title.png')",
+    backgroundImage: Text_Title,
     backgroundRepeat: "no-repeat",
     backgroundSize: "100% 100%",
     paddingLeft: 10,
@@ -105,15 +93,12 @@ export const floatingTab = styled("article", {
     height: "1rem",
     fontSize: "60%",
   },
-
   "@mobile": {
-    backgroundImage: `url('/assets/images/page3/p3-text-m.png')`,
     width: "190px",
     top: "40%",
     right: "15%",
     height: "290px",
     padding: "30px 15px 0px 15px",
-
     "& p": {
       fontSize: "70%",
       fontWeight: "lighter",
@@ -172,7 +157,7 @@ export const floatingMainCircle = styled("div", {
     },
   },
   "&:after": {
-    animation: `${rotate} 3s infinite`,
+    // animation: `${rotate} 3s infinite`,
     backgroundImage: `url('/assets/images/page3/p3-rotate1.png')`,
     backgroundSize: "100% 100%",
     content: "",
@@ -193,92 +178,92 @@ export const floatingMainCircle = styled("div", {
   },
 });
 
-export const rotatingCircles = styled("div", {
-  backgroundImage: "url('/assets/images/page3/p3-circle1.png')",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "190vw 190vw",
-  width: "190vw",
-  height: "190vw",
-  position: "absolute",
-  zIndex: 2,
-  "&:after": {
-    width: "190vw",
-    height: "190vw",
-    animation: `${rotateBack} 15s infinite`,
-    backgroundImage: `url('/assets/images/page3/p3-circle6.png')`,
-    backgroundSize: "100% 100%",
-    content: "",
-    position: "absolute",
-  },
-  "&:before": {
-    width: "190vw",
-    height: "190vw",
-    animation: `${rotate} 30s linear infinite`,
-    backgroundImage: `url('/assets/images/page3/p3-circle2.png')`,
-    opacity: 0.5,
-    backgroundSize: "100% 100%",
-    content: "",
-    position: "absolute",
-  },
-  "@mobile": {
-    top: "23vw",
-    left: -140,
-  },
-  "@tablet": {
-    top: "21vw",
-    left: -200,
-  },
-  "@desktop": {
-    top: "unset",
-    bottom: "0px",
-    left: "unset",
-    right: -300,
-    backgroundSize: "1100px 1100px",
-    width: "1100px",
-    height: "88.307%",
-    "&:after": {
-      width: "1100px",
-      height: "1100px",
-    },
-    "&:before": {
-      width: "1100px",
-      height: "1100px",
-    },
-  },
-});
+// export const rotatingCircles = styled("div", {
+//   // backgroundImage: "url('/assets/images/page3/p3-circle1.png')",
+//   // backgroundRepeat: "no-repeat",
+//   // backgroundSize: "190vw 190vw",
+//   width: "190vw",
+//   height: "190vw",
+//   position: "absolute",
+//   zIndex: 2,
+//   "&:after": {
+//     width: "190vw",
+//     height: "190vw",
+//     animation: `${rotateBack} 15s infinite`,
+//     backgroundImage: `url('/assets/images/page3/p3-circle6.png')`,
+//     backgroundSize: "100% 100%",
+//     content: "",
+//     position: "absolute",
+//   },
+//   "&:before": {
+//     width: "190vw",
+//     height: "190vw",
+//     animation: `${rotate} 30s linear infinite`,
+//     backgroundImage: `url('/assets/images/page3/p3-circle2.png')`,
+//     opacity: 0.5,
+//     backgroundSize: "100% 100%",
+//     content: "",
+//     position: "absolute",
+//   },
+//   "@mobile": {
+//     top: "23vw",
+//     left: -140,
+//   },
+//   "@tablet": {
+//     top: "21vw",
+//     left: -200,
+//   },
+//   "@desktop": {
+//     top: "unset",
+//     bottom: "0px",
+//     left: "unset",
+//     right: -300,
+//     // backgroundSize: "1100px 1100px",
+//     width: "1100px",
+//     height: "88.307%",
+//     "&:after": {
+//       width: "1100px",
+//       height: "1100px",
+//     },
+//     "&:before": {
+//       width: "1100px",
+//       height: "1100px",
+//     },
+//   },
+// });
 
-export const movingBackground = styled("div", {
-  zIndex: -1,
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "auto 100%",
-  position: "absolute",
-  bottom: 0,
-  width: "100%",
-  height: "95%",
-  backgroundColor: "#333",
-  "@mobile": { 
-    animation: `${slide} 20s infinite ease-in-out`,
-    backgroundSize: "auto 100%",
-  },
-  "@desktop": {
-    right: "-240px",
-    height: "85%",
-    backgroundSize: "100% 100%",
-    width: "1000px",
-    zIndex: 1,
-    animation: "none",
-    maskImage:`url('/assets/images/page3/mask.png')`,
-    maskSize: "100% auto",
-    maskRepeat:"no-repeat",
-},
-});
+// export const movingBackground = styled("div", {
+//   zIndex: -1,
+//   // backgroundRepeat: "no-repeat",
+//   // backgroundSize: "auto 100%",
+//   position: "absolute",
+//   bottom: 0,
+//   width: "100%",
+//   height: "95%",
+//   backgroundColor: "#333",
+//   "@mobile": { 
+//     animation: `${slide} 20s infinite ease-in-out`,
+//     // backgroundSize: "auto 100%",
+//   },
+//   "@desktop": {
+//     right: "-240px",
+//     height: "85%",
+//     // backgroundSize: "100% 100%",
+//     width: "1000px",
+//     zIndex: 1,
+//     animation: "none",
+//     maskImage:`url('/assets/images/page3/mask.png')`,
+//     maskSize: "100% auto",
+//     maskRepeat:"no-repeat",
+// },
+// });
 
 
 export const bottomBackground = styled("div", {
-  backgroundImage: "url('/assets/images/page3/p3-bottom.png')",
+  // backgroundImage: "url('/assets/images/page3/p3-bottom.png')",
   zIndex: 4,
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "100% 190%",
+  // backgroundRepeat: "no-repeat",
+  // backgroundSize: "100% 190%",
   position: "absolute",
   bottom: -5,
   width: "100%",
@@ -296,8 +281,8 @@ export const bottomBackground = styled("div", {
 
 export const cityOption = styled("button", {
   borderRadius: "100%",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "100% 100%",
+  // backgroundRepeat: "no-repeat",
+  // backgroundSize: "100% 100%",
   position: "relative",
   border: "none",
   padding: 0,
@@ -308,16 +293,16 @@ export const cityOption = styled("button", {
     transition: "all 500ms ease-in-out",
     content: "",
     position: "absolute",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "100% 100%",
+    // backgroundRepeat: "no-repeat",
+    // backgroundSize: "100% 100%",
   },
   "&:after": {
     transition: "all 500ms ease-in-out",
     content: "",
     position: "absolute",
     animation: `${rotateBack} 10s linear infinite`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "100% 100%",
+    // backgroundRepeat: "no-repeat",
+    // backgroundSize: "100% 100%",
   },
   "@desktop": {
     transform: "translate(50%, 50%)",

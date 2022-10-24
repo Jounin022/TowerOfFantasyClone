@@ -2,9 +2,12 @@ import * as S from "./about.styles";
 import { useState } from "react";
 import { cities } from "../../../utils/cities";
 import Image from "next/image";
-import hands from "../../../../public/assets/images/page3/p3-flash.png";
+import { Flash , Rotate } from "utils/assets/landing-page/sections/about";
 import { useCharacter } from "hooks/useCharacter";
 import { Title } from "components/title";
+import { White_Background } from "utils/assets/landing-page/sections/about"
+import { Text_M, Text } from "utils/assets/landing-page/sections/about"
+
 export const About = () => {
   const { activeCharacter } = useCharacter()
   const [selectedCity, setSelectedCity] = useState(1);
@@ -18,16 +21,40 @@ export const About = () => {
   }
 
   return (
-    <S.background id="section-4">
+    <S.section id="section-4">
+      <S.background alt="white background" 
+        mobile={{img:White_Background.src,objFit:"cover"}}
+        tablet={{img:White_Background.src,objFit:"cover"}}
+        desktop={{img:White_Background.src,objFit:"cover"}}
+      />
+
       <S.TitleWrapper>
         <Title title="DESCUBRA TOF" />
       </S.TitleWrapper>
 
       <S.floatingMainCircle  css={{ filter:`hue-rotate(${activeCharacter.hueRotate})`}}>
-        <Image alt="A.I.D.A symbol" src={hands} width={50} height={50} />
+        <S.rotatingBackground  
+          imgCss={{animation: `${S.rotate} 3s infinite`}}
+          mobile={{img:Rotate.src ,objFit:'fill'}}
+          tablet={{img:Rotate.src ,objFit:'fill'}}
+          desktop={{img:Rotate.src ,objFit:'fill'}}
+        />
+
+        <S.flash 
+        alt="A.I.D.A symbol"
+        css={{ filter:`hue-rotate(${activeCharacter.hueRotate})`,width:"50px",height:"50px"}}
+        mobile={{img:Flash.src ,objFit:'fill'}}
+        tablet={{img:Flash.src ,objFit:'fill'}}
+        desktop={{img:Flash.src ,objFit:'fill'}}
+        />
       </S.floatingMainCircle>    
 
       <S.floatingTab  css={{ filter:`hue-rotate(${activeCharacter.hueRotate})`}}>
+        <S.tabBackground 
+        mobile={{img:Text_M.src ,objFit:'fill'}}
+        tablet={{img:Text.src ,objFit:'fill'}}
+        desktop={{img:Text.src ,objFit:'fill'}}
+         />
         <h2>Fundação da civilização</h2>
         <p>
           Através de um plano de colonização interestelar, os humanos criaram
@@ -40,7 +67,7 @@ export const About = () => {
       </S.floatingTab>      
 
       <S.bottomBackground >
-        {cities.map((city) => {
+        {/* {cities.map((city) => {
           return (
             <S.cityOption
             key={city.number}
@@ -75,12 +102,12 @@ export const About = () => {
               onClick={() => setSelectedCity(city.number)}
             />
           );
-        })}
+        })} */}
       </S.bottomBackground>
     
-      <S.movingBackground css={{backgroundImage: `url('/assets/images/page3/discover${selectedCity}.jpg')`}}/>
-      <S.rotatingCircles css={{ filter:`hue-rotate(${activeCharacter.hueRotate})`}} />
-      <S.subBackground css={{ filter:`hue-rotate(${activeCharacter.hueRotate})`}} />
-    </S.background>
+      {/* <S.movingBackground css={{backgroundImage: `url('/assets/images/page3/discover${selectedCity}.jpg')`}}/> */}
+      {/* <S.rotatingCircles css={{ filter:`hue-rotate(${activeCharacter.hueRotate})`}} /> */}
+      {/* <S.subBackground css={{ filter:`hue-rotate(${activeCharacter.hueRotate})`}} /> */}
+    </S.section>
   );
 };

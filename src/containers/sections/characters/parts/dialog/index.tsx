@@ -1,4 +1,4 @@
-import { ICharacter } from "utils/characters/types";
+import { ICharacter } from "utils/types";
 import * as S from "./style";
 import { CHARACTER_PAGE_NUMBER } from "../../index"
 

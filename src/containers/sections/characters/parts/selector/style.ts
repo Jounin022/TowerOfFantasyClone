@@ -1,6 +1,6 @@
 import { styled } from "styles/stitches.config";
-import { ICharacter } from "utils/characters/types";
-import { activeBorder } from "utils/characters/index";
+import { ICharacter } from "utils/types";
+import { ActiveBorder } from "characters/general/index";
 
 export const characterOption = styled("button", {
   "@mobile": {
@@ -92,7 +92,7 @@ export const handleCharacterOptionStyle = (
   return {
     bg: { i: char.number === activeCharacter ? char.active : char.inactive },
     "&:after": {
-      bg: { i: char.number === activeCharacter ? activeBorder : "unset" },
+      bg: { i: char.number === activeCharacter ? ActiveBorder.src : "unset" },
     },
   };
 };

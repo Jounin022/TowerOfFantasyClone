@@ -5,14 +5,14 @@
 //   // basePath: '/',
   
 // }
+
 module.exports = {
    images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
-  webpack(config, options) {
-    const { isServer } = options;
+  webpack(config,  { isServer }) {
     config.module.rules.push({
-      test: /\.(ogg|mp3|wav|mpe?g)$/i,
+      test: /\.(ogg|mp3|mp4|wav|mpe?g)$/i,
       exclude: config.exclude,
       use: [
         {

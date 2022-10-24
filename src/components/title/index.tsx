@@ -1,13 +1,13 @@
 import * as S from "./title.styles";
-
+import { Title_Bar } from "utils/assets/landing-page/titles/index" 
 export const Title = ({ title }: { title: string }) => {
   return (
     <S.wrapper id="asdf">
       <S.tof>
         <S.bar
-         mobile={{ img: "/assets/images/general/titlebar.png", objFit: "fill", }}
-         tablet={{ img: "/assets/images/general/titlebar.png", objFit: "fill", }}
-         desktop={{ img: "/assets/images/general/titlebar.png", objFit: "fill", }}
+         mobile={{  img: Title_Bar.src, objFit: "fill", }}
+         tablet={{  img: Title_Bar.src, objFit: "fill", }}
+         desktop={{ img: Title_Bar.src, objFit: "fill", }}
          />
         Tower of Fantasy 
       </S.tof>

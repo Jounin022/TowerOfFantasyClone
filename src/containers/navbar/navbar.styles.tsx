@@ -1,3 +1,4 @@
+import { ResponsiveImage } from "utils/functions";
 import { styled } from "../../styles/stitches.config";
 
 export const navbar = styled("nav", {
@@ -5,20 +6,16 @@ export const navbar = styled("nav", {
   display: "flex",
   position: "fixed",
   zIndex:10,
-//  display:'none',
+  bgg:true,
       '@mobile': {
         opacity: 0,
         transition: '1s ',
-        // display: 'none',
       },
       "@tablet": {
         opacity: 0,
       },
       "@desktop": {
         flexDirection: 'row',
-        backgroundSize: "100% 100%",
-        backgroundRepeat: "no-repeat",
-        backgroundImage: `url('/assets/images/general/navigationBar/top.png')`,
         height: "98px",
         opacity: 1,
         transition: '0s',
@@ -31,9 +28,10 @@ export const logo = styled('figure', {
   height: "70px",
   position: "relative",
   display: 'block',
-
   margin:0,
 }); 
+
+export const background = styled(ResponsiveImage)
 
 export const ul = styled('ul', {
 position: 'absolute',

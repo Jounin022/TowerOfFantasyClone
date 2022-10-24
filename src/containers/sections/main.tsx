@@ -1,6 +1,6 @@
 import { Home, Notices, Features, Characters, About } from "./index";
 import { Aside } from "../aside";
-import { Navbar } from "../navbar";
+// import { Navbar } from "../navbar";
 import { useSection } from "../../hooks/useSection";
 import { useEffect } from "react";
 import {styled} from "../../styles/stitches.config"
@@ -31,7 +31,7 @@ const Main = styled('main',{
 
   return (
     <main id="main" onWheel={(e) => onScroll(e)}>
-      <Navbar />
+      {/* <Navbar /> */}
       <Aside />
       <Home />
       <Characters />

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ICharacter } from "utils/characters/types";
+import { ICharacter } from "utils/types";
 import { CHARACTER_PAGE_NUMBER } from "../../index"
-import { activeCBCharacter, activeCBSimulacrum , inactiveCBCharacter , inactiveCBSimulacrum, characterArrow, simulacrumArrow } from "characters/index"
+import { ActiveCBCharacter, ActiveCBSimulacrum , InactiveCBCharacter , InactiveCBSimulacrum, ChangeToCharacter, ChangeToSimulacrum } from "characters/general"
 import * as S from "./style";
 import { useCharacter } from "hooks/useCharacter";
 
@@ -25,7 +25,7 @@ export const ChangeButton = ({activePage,simulacrum,setSimulacrum}:DialogProps) 
         <S.changeIcon 
         onClick={()=>setSimulacrum(!simulacrum)}
         css={{
-              bg: {i: simulacrum ? characterArrow : simulacrumArrow , s: "50%", p: "bottom right"}
+              bg: {i: simulacrum ? ChangeToCharacter.src : ChangeToSimulacrum.src , s: "50%", p: "bottom right"}
         }}
         /> 
 
@@ -36,7 +36,7 @@ export const ChangeButton = ({activePage,simulacrum,setSimulacrum}:DialogProps) 
             top: simulacrum ? "20%" : "50%" ,
             right: simulacrum ? "0%" : "20%" ,
             zIndex: simulacrum ? "2" : "3" ,
-            bg: {i: simulacrum ?  inactiveCBCharacter :   activeCBCharacter , s: simulacrum ?  "80%" : "90%"}
+            bg: {i: simulacrum ?  InactiveCBCharacter.src :   ActiveCBCharacter.src , s: simulacrum ?  "80%" : "90%"}
         }}
         />
 
@@ -48,7 +48,7 @@ export const ChangeButton = ({activePage,simulacrum,setSimulacrum}:DialogProps) 
             top:  simulacrum ? "50%" : "20%",
             right: simulacrum ?  "20%" : "0%",
             zIndex: simulacrum ? "3" : "2" ,
-            bg: {i: simulacrum ?   activeCBSimulacrum :  inactiveCBSimulacrum,s: simulacrum ?  "90%" : "80%"}
+            bg: {i: simulacrum ?   ActiveCBSimulacrum.src :  InactiveCBSimulacrum.src,s: simulacrum ?  "90%" : "80%"}
         }}
         />
         

@@ -1,7 +1,8 @@
 import * as S from "./characters.styles";
 import { useState } from "react";
 import { useSection } from "hooks/useSection";
-import { characters } from "characters/index"
+import { characters } from "utils/characters"
+import { White_Background } from "characters/general/index"
 import { Background , Character, Selector , Dialog, Weapon, ChangeButton } from "./parts"
 import { useCharacter } from "hooks/useCharacter";
 import { Title } from "components/title";
@@ -19,9 +20,9 @@ export const Characters = () => {
   return (
     <S.section id="section-2">
       <S.backgroundImage
-      mobile={{img:'/assets/images/page4/p4-bg.jpg', objFit:"cover"}} 
-      tablet={{img:'/assets/images/page4/p4-bg.jpg', objFit:"cover"}} 
-      desktop={{img:'/assets/images/page4/p4-bg.jpg', objFit:"cover"}} 
+      mobile={{ img:White_Background, objFit:"cover"}} 
+      tablet={{ img:White_Background, objFit:"cover"}} 
+      desktop={{img:White_Background, objFit:"cover"}} 
       />
     <S.titleWrapper>
       <Title title="PERSONAGENS"/>

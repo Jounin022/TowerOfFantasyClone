@@ -1,8 +1,8 @@
 import { StaticImageData } from "next/image";
 
 type ImgOptionProps = {
-    activeImg: StaticImageData;
-    inactiveImg: StaticImageData;
+    activeImg: string;
+    inactiveImg: string;
     alt:string;
     w: number;
     h: number;

@@ -1,9 +1,7 @@
+import { ResponsiveImage } from "utils/functions"
 import { styled } from "../../styles/stitches.config"
 
 export const aside = styled('aside',{
-backgroundImage: `url('/assets/images/general/sidePagination/scrollBox.png')`,
-backgroundRepeat: 'no-repeat',
-backgroundSize: 'contain',
 width: 50,
 height: 180,
 position: "fixed",
@@ -14,11 +12,7 @@ flexDirection: 'column',
 top: "30%",
 right: 10,
 zIndex:10,
-
     "@mobile":{
-        display: 'none',
-    },
-    "@tablet":{
         display: 'none',
     },
     "@desktop":{
@@ -26,7 +20,7 @@ zIndex:10,
     },
 
 })
-
+export const background = styled(ResponsiveImage)
 export const ul = styled('ul',{
     display: "flex",
     flexDirection: "column",

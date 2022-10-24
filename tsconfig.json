@@ -4,7 +4,7 @@
     "paths": {
       "hooks/*": ["hooks/*"],
       "utils/*": ["utils/*"],
-      "characters/*": ["utils/characters/*"],
+      "characters/*": ["utils/assets/landing-page/sections/characters/*"],
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

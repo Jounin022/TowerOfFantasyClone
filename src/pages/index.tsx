@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import DeviceIndicator from "../components/displayIndicator";
 import { SectionProvider } from "../contexts/section";
 import { Main } from "../containers/sections"
 import { DeviceProvider } from "contexts/device";
@@ -11,7 +10,6 @@ const ToFSPA: NextPage = () => {
       <CharacterProvider>
       <DeviceProvider>
       <Main/>
-      <DeviceIndicator />
       </DeviceProvider>
       </CharacterProvider>
     </SectionProvider>

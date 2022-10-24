@@ -3,11 +3,8 @@ import { IParallax } from "./types";
 import { useRef } from "react";
 import { ResponsiveImage } from "utils/functions";
 import { useCharacter } from "hooks/useCharacter";
+import { Description1 , FilterBackImage ,MainPostImage ,PanelImage } from "utils/assets/landing-page/sections/features"
 
-import PanelImage from "../../../../public/assets/images/page5/p7-block.png"
-import MainPostImage from "../../../../public/assets/images/page5/p7-img4.png"
-import FilterBackImage from "../../../../public/assets/images/page5/p7-before.png"
-import Description1 from "../../../../public/assets/images/page5/p7-t1.png"
 
 export const Features = () => {
     const {activeCharacter} =useCharacter()

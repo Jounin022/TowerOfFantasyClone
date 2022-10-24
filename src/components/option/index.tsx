@@ -13,7 +13,7 @@ export const Option = (props: OptionProps) => {
         onMouseOut={() => setActive(false)}
         onClick={() => props.action()}
       >
-        <S.Button css={{ height: props.h, width: props.w, bg:{i:active ? props.activeImg.src : props.inactiveImg.src} }}/>
+        <S.Button css={{ height: props.h, width: props.w, bg:{i:active ? props.activeImg : props.inactiveImg} }}/>
       </S.li>
     );
   }

@@ -1,5 +1,5 @@
 import { styled , css } from 'styles/stitches.config';
-import { ICharacter } from 'utils/characters/types';
+import { ICharacter } from 'utils/types';
 import { ResponsiveImage } from "utils/functions";
 
 export const charBackground = styled(ResponsiveImage);
