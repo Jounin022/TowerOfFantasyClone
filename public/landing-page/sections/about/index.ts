@@ -22,6 +22,8 @@ import Mask from   "./images/mask.png";
 import Text from   "./images/text-bg.png";
 import Text_M from   "./images/text-bg-m.png";
 import Text_Title from   "./images/text-bg-title.png";
+import Sub_Background from   "./images/sub-bg.png";
+import Sub_Background_M from   "./images/sub-bg-m.png";
 
 
 export {
@@ -49,4 +51,6 @@ export {
     Text_M,
     Text_Title,
     Text,
+    Sub_Background,
+    Sub_Background_M,
 };

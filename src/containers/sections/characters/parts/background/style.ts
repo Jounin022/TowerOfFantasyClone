@@ -1,4 +1,4 @@
-import { styled , css } from 'styles/stitches.config';
+import { styled , css } from 'src/styles/stitches.config';
 import { ICharacter } from 'utils/types';
 import { ResponsiveImage } from "utils/functions";
 

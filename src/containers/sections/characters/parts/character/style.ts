@@ -1,4 +1,4 @@
-import { styled } from "styles/stitches.config";
+import { styled } from "src/styles/stitches.config";
 import { ResponsiveImage } from "utils/functions";
 
 export const characterWrapper = styled("div", {
@@ -28,3 +28,10 @@ export const character = styled(ResponsiveImage, {
     translateY: "0%",
   },
 });
+export const StyledImg = styled('img',{
+  position: "absolute",
+  width : "500px",
+  height : "500px",
+  bgg :true,
+  objectFit:"cover",
+})

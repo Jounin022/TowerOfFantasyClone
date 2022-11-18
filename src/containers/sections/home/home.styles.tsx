@@ -1,4 +1,5 @@
-import { styled ,keyframes} from "../../../styles/stitches.config";
+import { ResponsiveImage } from "utils/functions";
+import { styled ,keyframes} from "src/styles/stitches.config";
 
 export const video = styled("video", {
   width: "100%",
@@ -53,7 +54,9 @@ const blinkArrows = keyframes({
   "100%": { backgroundImage: `url('/assets/images/page1/p1-arrow.png')`, },
 });
 
-export const foot = styled("footer", {
+export const footerImage = styled(ResponsiveImage)
+
+export const footer = styled("footer", {
   backgroundPosition: "center",
   left: 0,
   bottom: 0,
@@ -83,13 +86,13 @@ export const foot = styled("footer", {
     },
   },
   "@mobile": {
-    backgroundImage: `url('/assets/images/page1/p1-bottom-m.png')`,
-    backgroundSize: "cover",
+    // backgroundImage: `url('/assets/images/page1/p1-bottom-m.png')`,
+    // backgroundSize: "cover",
     height: "40px",
   },
   "@tablet": {
-    backgroundImage: `url('/assets/images/page1/p1-bottom.png')`,
-    backgroundSize: "100% 100%",
+    // backgroundImage: `url('/assets/images/page1/p1-bottom.png')`,
+    // backgroundSize: "100% 100%",
     height: "115vh",
   },
 });

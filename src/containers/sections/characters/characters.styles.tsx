@@ -1,5 +1,5 @@
 import { ResponsiveImage } from 'utils/functions';
-import { styled } from '../../../styles/stitches.config';
+import { styled } from 'src/styles/stitches.config';
 
 export const section = styled('section', {
   // backgroundImage: "url('/assets/images/page4/p4-bg.jpg')",

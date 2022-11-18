@@ -1,25 +1,30 @@
-import { useCharacter } from "hooks/useCharacter";
-import { ResponsiveImage } from "utils/functions";
 import * as S from "./notices.styles";
+// import { useCharacter } from "hooks/useCharacter";
+import * as Img from "public/landing-page/sections/notices"
+import { ICharacter } from "utils/types";
+interface INoticesProps {
+  activeCharacter:ICharacter
+}
 
-const BackgroundImage = ResponsiveImage
-// const BackgroundImage = ResponsiveImage
-export const Notices = () => {
-const {activeCharacter} = useCharacter()
+export const Notices = (props:INoticesProps) => {
   return (
     <S.background id="section-3">
       <S.backgroundImage
-          mobile={{img:"/assets/images/page2/p6-bg-m.jpg", objFit:"cover"}}
-          tablet={{img:"/assets/images/page2/p6-bg.jpg", objFit:"cover"}}
-          desktop={{img:"/assets/images/page2/p6-bg.jpg", objFit:"fill"}}  
+          desktop={{img: Img.Background.src, objFit:"cover"}}  
+          tablet={{img: Img.Background.src, objFit:"cover"}}
+          mobile={{img: Img.Background_M.src, objFit:"cover"}}
         />
 
       <S.title id="teste"/>
-      <S.panel>
-        <S.imagePanel imgCss={{filter:`hue-rotate(${activeCharacter.hueRotate})`}}
-          mobile={{img:"/assets/images/page2/p6-main-m.png", objFit:"fill"}}
-          tablet={{img:"/assets/images/page2/p6-main-m.png", objFit:"fill"}}
-          desktop={{img:"/assets/images/page2/p6-main.png", objFit:"fill"}}  
+      <S.panel css={{zIndex:2}}>
+        <S.imagePanel 
+          imgCss={{
+            zIndex:2,
+            filter:`hue-rotate(${props.activeCharacter.hueRotate})`
+          }}
+          mobile={{img: Img.Panel_M.src, objFit:"fill"}}
+          tablet={{img: Img.Panel_M.src, objFit:"fill"}}
+          desktop={{img: Img.Panel.src, objFit:"fill"}}  
         />
         <S.innerAside>
           <S.button>NEWS</S.button>
@@ -30,10 +35,10 @@ const {activeCharacter} = useCharacter()
         <S.article
            css={{ "&::-webkit-scrollbar": {
             width: "10px",
-            backgroundColor: activeCharacter.mainColors.primary,
+            backgroundColor: props.activeCharacter.mainColors.primary,
           },
           "&::-webkit-scrollbar-thumb": {
-            backgroundColor: activeCharacter.mainColors.secondary,
+            backgroundColor: props.activeCharacter.mainColors.secondary,
           }
         }}
            onMouseEnter={(e) => {
@@ -69,11 +74,16 @@ const {activeCharacter} = useCharacter()
             </S.li>
           </ul>
         </S.article>
-        <div>
-          <S.imageBanner />
-        </div>
+          <S.bannerWrapper >
+          <S.imageBanner 
+          imgCss={{zIndex:0}}
+          mobile={{img: Img.Noticia.src, objFit:"fill"}}
+          tablet={{img: Img.Noticia.src, objFit:"cover"}}
+          desktop={{img: Img.Noticia.src, objFit:"cover"}}  
+          />
+          </S.bannerWrapper>
       </S.panel>
-      {/* <S.twitter
+      <S.twitter
         onMouseOver={() => {
           document.documentElement.style.overflow = "hidden";
         }}
@@ -108,7 +118,7 @@ const {activeCharacter} = useCharacter()
           src="https://platform.twitter.com/widgets.js"
           charSet="utf-8"
         ></script>
-      </S.twitter> */}
+      </S.twitter>
     </S.background>
   );
 };

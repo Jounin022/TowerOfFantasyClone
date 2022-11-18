@@ -1,13 +1,9 @@
 import { ResponsiveImage } from "utils/functions"
-import { styled } from "../../../styles/stitches.config"
+import { styled } from "src/styles/stitches.config"
 export const background = styled('section',{
-    backgroundImage:`url('/assets/images/page5/p7-bg.jpg')`,
-    backgroundSize:'cover',
-    backgroundPosition:'center',
     width:'auto',
     height:'100vh',
     position: 'relative',
-    backgroundRepeat:"no-repeat",
     objectFit:'contain',
     display: 'flex',
     justifyContent: 'center',
@@ -22,9 +18,7 @@ export const background = styled('section',{
     display: 'flex',
     justifyContent: 'center',  
     alignItems: 'center',  
-    backgroundImage: `url('/assets/images/page5/p7-t1.png'),url('/assets/images/page5/p7-t1.png'),url('/assets/images/page5/p7-t1.png')`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
+  
 })
 
 

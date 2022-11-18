@@ -1,12 +1,12 @@
 import { ResponsiveImage } from "utils/functions";
-import { styled } from "../../styles/stitches.config";
+import { styled } from "src/styles/stitches.config";
 
 export const navbar = styled("nav", {
   width: "100%",
   display: "flex",
   position: "fixed",
+  height: "100px",
   zIndex:10,
-  bgg:true,
       '@mobile': {
         opacity: 0,
         transition: '1s ',
@@ -16,7 +16,6 @@ export const navbar = styled("nav", {
       },
       "@desktop": {
         flexDirection: 'row',
-        height: "98px",
         opacity: 1,
         transition: '0s',
       },

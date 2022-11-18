@@ -1,5 +1,5 @@
 import { ResponsiveImage } from "utils/functions"
-import { styled } from "../../styles/stitches.config"
+import { styled } from "src/styles/stitches.config"
 
 export const aside = styled('aside',{
 width: 50,

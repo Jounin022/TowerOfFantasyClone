@@ -1,19 +1,15 @@
-import { styled } from "../../../styles/stitches.config";
+import { styled } from "src/styles/stitches.config";
 import Image from "next/image";
 import { ResponsiveImage } from "utils/functions";
 
 export const background = styled("section", {
   // scrollSnapAlign: 'start',
-  width: "auto",
+  width: "100vw",
   height: "100vh",
   display: "flex",
   position: "relative",
-  objectFit: "contain",
-  backgroundRepeat: "no-repeat",
   justifyContent: "center",
-  backgroundSize: "cover",
   overflow: "hidden",
-  zIndex:0,
 });
 
 export const backgroundImage = styled(ResponsiveImage);
@@ -91,13 +87,13 @@ export const imagePanel = styled(ResponsiveImage,{
   left: "0px",
 })
 
-export const imageBanner = styled("div", {
+export const imageBanner = styled(ResponsiveImage)
+
+export const bannerWrapper = styled("div", {
   position: "absolute",
   backgroundRepeat: "no-repeat",
   zIndex: 1,
   "@mobile": {
-    backgroundImage: `url('/assets/images/page2/noticia.jpg')`,
-    backgroundSize: "100% 100%",
     top: "4%",
     left: "5%",
     height: "40%",
@@ -111,13 +107,9 @@ export const imageBanner = styled("div", {
     width: "90%",
     height: "40%",
     backgroundSize: "cover",
-    backgroundImage: `url('/assets/images/page2/noticia.jpg')`,
-    backgroundPosition: "center",
     borderTopLeftRadius: "0%",
   },
   "@desktop": {
-    backgroundImage: `url('/assets/images/page2/noticia.jpg')`,
-    backgroundSize: "cover",
     top: "10%",
     left: "2%",
     height: "60%",

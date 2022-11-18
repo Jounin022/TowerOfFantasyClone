@@ -4,26 +4,24 @@ import { createPortal } from "react-dom";
 import { ICharacter } from "utils/types";
 import { CHARACTER_PAGE_NUMBER } from "../../index"
 import { useEffect, useState } from "react";
-import { useCharacter } from "hooks/useCharacter";
-
+import { characters } from "utils/characters";
 interface BackgroundProps {
-    activeCharacter: number,
-    characters: ICharacter[],
+    activeCharacter: ICharacter,
     activePage:number,
+    setActiveCharacter:(char:ICharacter) => void
 }
 
-export const Selector = ({activeCharacter,characters, activePage}:BackgroundProps) => { 
-  const { setActiveCharacter } = useCharacter()
+export const Selector = (props:BackgroundProps) => { 
     const [renderSideMenu,setRenderSideMenu] = useState<boolean>(false)
     const [renderedDocument,setRenderDocument] = useState<boolean>(false)
     
     useEffect(()=>{
-      if(activePage >= CHARACTER_PAGE_NUMBER){
+      if(props.activePage >= CHARACTER_PAGE_NUMBER){
         setTimeout(()=>{setRenderSideMenu(true)},100)
       } else {
         setRenderSideMenu(false)
       }
-    },[activePage])
+    },[props.activePage])
 
     useEffect(()=>{
       setRenderDocument(!!document)
@@ -31,15 +29,15 @@ export const Selector = ({activeCharacter,characters, activePage}:BackgroundProp
 
     return renderedDocument && createPortal(
       <S.selectorWrapper 
-       css={S.handleSelectorWrapperStyle(renderSideMenu,activePage,CHARACTER_PAGE_NUMBER)}
+       css={S.handleSelectorWrapperStyle(renderSideMenu,props.activePage,CHARACTER_PAGE_NUMBER)}
       >
         {characters.map((char) => 
         <S.characterOption 
-         css={S.handleCharacterOptionStyle(char,activeCharacter)}
+         css={S.handleCharacterOptionStyle(char,props.activeCharacter.number)}
          title={char.name}
          key={`${char.name}-opt`}
          type="button"
-         onClick={() => setActiveCharacter(char)}
+         onClick={() => props.setActiveCharacter(char)}
         />
         )}
       </S.selectorWrapper>,

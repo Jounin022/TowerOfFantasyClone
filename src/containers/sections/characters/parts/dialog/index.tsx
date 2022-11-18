@@ -4,18 +4,17 @@ import { CHARACTER_PAGE_NUMBER } from "../../index"
 
 interface DialogProps {
     activePage:number,
-    activeCharacter:number,
-    characters:ICharacter[]
+    activeCharacter:ICharacter,
 }
 
-export const Dialog = ({activePage,activeCharacter,characters}:DialogProps) => { 
+export const Dialog = (props:DialogProps) => { 
     return (
         <S.dialogWrapper  css={{
-            transition: `all ${activePage === CHARACTER_PAGE_NUMBER ? "1" : "0.4"}s  cubic-bezier(0.18, 0.1, 0.05, 0.71) 1s`,
-            opacity: activePage === CHARACTER_PAGE_NUMBER ? 1 : 0,
+            transition: `all ${props.activePage === CHARACTER_PAGE_NUMBER ? "1" : "0.4"}s  cubic-bezier(0.18, 0.1, 0.05, 0.71) 1s`,
+            opacity: props.activePage === CHARACTER_PAGE_NUMBER ? 1 : 0,
          }}>
            <S.dialog
-            desktop={{img:characters[activeCharacter].tab, objFit:"contain", objPosition:"left" }}
+            desktop={{img:props.activeCharacter.tab, objFit:"contain", objPosition:"left" }}
           />
        </S.dialogWrapper>
  

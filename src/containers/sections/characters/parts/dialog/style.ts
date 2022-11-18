@@ -1,4 +1,4 @@
-import { styled } from "styles/stitches.config";
+import { styled } from "src/styles/stitches.config";
 import { ResponsiveImage } from "utils/functions";
 
 export const dialogWrapper = styled('div', {

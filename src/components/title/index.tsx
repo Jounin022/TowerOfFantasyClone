@@ -1,5 +1,5 @@
 import * as S from "./title.styles";
-import { Title_Bar } from "utils/assets/landing-page/titles/index" 
+import { Title_Bar } from "public/landing-page/titles/index" 
 export const Title = ({ title }: { title: string }) => {
   return (
     <S.wrapper id="asdf">

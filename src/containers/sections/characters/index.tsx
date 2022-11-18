@@ -1,38 +1,35 @@
 import * as S from "./characters.styles";
-import { useState } from "react";
-import { useSection } from "hooks/useSection";
-import { characters } from "utils/characters"
 import { White_Background } from "characters/general/index"
 import { Background , Character, Selector , Dialog, Weapon, ChangeButton } from "./parts"
-import { useCharacter } from "hooks/useCharacter";
-import { Title } from "components/title";
+import { Title } from "src/components/title";
+import { ICharacter } from "utils/types";
 
 export const CHARACTER_PAGE_NUMBER = 2
+interface ICharactersProps {
+  activeCharacter: ICharacter
+  activePage: number
+  setSimulacrum: (value:boolean) => void
+  setActiveCharacter: (value:ICharacter) => void
+  simulacrum: boolean
+}
 
-export const Characters = () => {
-  const { activeCharacter } = useCharacter()
-  const { activePage } = useSection();
-  const [simulacrum, setSimulacrum] = useState(false) 
-  
-  const commonProps = {activeCharacter:activeCharacter.number,activePage,characters} 
-
-
+export const Characters = (props:ICharactersProps) => {
   return (
     <S.section id="section-2">
       <S.backgroundImage
-      mobile={{ img:White_Background, objFit:"cover"}} 
-      tablet={{ img:White_Background, objFit:"cover"}} 
-      desktop={{img:White_Background, objFit:"cover"}} 
+      mobile={{ img:White_Background.src, objFit:"cover"}} 
+      tablet={{ img:White_Background.src, objFit:"cover"}} 
+      desktop={{img:White_Background.src, objFit:"cover"}} 
       />
     <S.titleWrapper>
       <Title title="PERSONAGENS"/>
     </S.titleWrapper>
-    <Background {...commonProps} />
-    <Character {...commonProps} />
-    <Dialog {...commonProps} />
-    <Weapon {...commonProps} />
-    <ChangeButton {...commonProps} simulacrum={simulacrum} setSimulacrum={setSimulacrum} />
-    <Selector {...commonProps} />
+    <Background {...props} />
+    <Character {...props} />
+    <Dialog {...props} />
+    <Weapon {...props} />
+    <ChangeButton {...props}/>
+    <Selector {...props} />
     </S.section>
   );
 };

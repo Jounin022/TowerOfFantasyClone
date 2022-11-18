@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "hooks/*": ["hooks/*"],
-      "utils/*": ["utils/*"],
-      "characters/*": ["utils/assets/landing-page/sections/characters/*"],
+      "hooks/*": ["src/hooks/*"],
+      "utils/*": ["src/utils/*"],
+      "characters/*": ["public/landing-page/sections/characters/*"],
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

@@ -1,6 +1,6 @@
 import React from 'react';
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
-import { getCssText } from '../styles/stitches.config';
+import { getCssText } from 'src/styles/stitches.config';
 
 export default class Document extends NextDocument {
   render() {
@@ -13,7 +13,6 @@ export default class Document extends NextDocument {
           <meta name="description" content="A clone from tower of fantasy landing page improving in responsive, accessibility and best practices."/>
           <meta name="keywords" content="Tower of Fantasy, Clone, Learning, Best practices,TOF"/>
           <meta name="author" content="Johnny Brendow"/>
-          <meta name="viewport" content="initial-scale=1.0"/>
           <style>
           @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;400;500;600;700;800&display=swap');
           </style>

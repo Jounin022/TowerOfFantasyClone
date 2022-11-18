@@ -1,5 +1,5 @@
 import { navPages, navTools } from "./types";
-import * as Img from "./assets/landing-page/navigationBar"
+import * as Img from "public/landing-page/navigationBar"
 export const NavOptionsArr: navPages[] = [
     {
       page: 1,

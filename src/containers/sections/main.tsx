@@ -1,13 +1,23 @@
 import { Home, Notices, Features, Characters, About } from "./index";
 import { Aside } from "../aside";
-// import { Navbar } from "../navbar";
+import { Navbar } from "../navbar";
 import { useSection } from "../../hooks/useSection";
-import { useEffect } from "react";
-import {styled} from "../../styles/stitches.config"
+import { useEffect, useState } from "react";
+import { ICharacter } from "utils/types";
+import { cities } from "utils/cities";
+import { characters } from "utils/characters";
 
 export const Main = () => {
-  const { onScroll , activePage} = useSection();
-  
+  const { onScroll, activePage , setActivePage} = useSection();
+  const [simulacrum, setSimulacrum] = useState(false) 
+  const [activeCity, setActiveCity] = useState(1);
+  const [activeCharacter, setActiveCharacter] = useState<ICharacter>(characters[0]);
+
+  const props = {
+    activeCharacter,
+    activePage,
+  }
+
   useEffect(() => {
     document.addEventListener(
       "wheel",
@@ -18,31 +28,15 @@ export const Main = () => {
     );
   }, []);
 
-const Main = styled('main',{
-  // height: '100vh',
-  // scrollSnapType: 'block mandatory',
-  // scrollSnapAlign:'start',
-  // overflowY:'scroll',
-})
-
-// const isSectionRendered = (pg:number) => {
-//   return pg === activePage || pg < activePage + 2
-// }
-
   return (
     <main id="main" onWheel={(e) => onScroll(e)}>
-      {/* <Navbar /> */}
-      <Aside />
-      <Home />
-      <Characters />
-      <Notices />
-      <About />
-      <Features />
-      {/* {isSectionRendered(1) && <Home />}
-      {isSectionRendered(2) && <Characters />}
-      {isSectionRendered(3) && <Notices />}
-      {isSectionRendered(4) && <About />}
-      {isSectionRendered(5) && <Features />} */}
+      <Navbar {...props} setActivePage={setActivePage} />
+      <Aside {...props} setActivePage={setActivePage}/>
+      <Home {...props} />
+      <Characters {...props} simulacrum={simulacrum} setSimulacrum={setSimulacrum} setActiveCharacter={setActiveCharacter}/>
+      <Notices {...props} />
+      <About {...props} activeCity={activeCity} cities={cities} setActiveCity={setActiveCity}/>
+      <Features {...props} />
     </main>
   );
 };

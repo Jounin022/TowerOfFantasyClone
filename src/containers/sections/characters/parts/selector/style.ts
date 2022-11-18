@@ -1,4 +1,4 @@
-import { styled } from "styles/stitches.config";
+import { styled } from "src/styles/stitches.config";
 import { ICharacter } from "utils/types";
 import { ActiveBorder } from "characters/general/index";
 

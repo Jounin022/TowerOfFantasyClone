@@ -1,30 +1,36 @@
 import { ResponsiveImage } from "utils/functions";
-import { styled, keyframes } from "../../../styles/stitches.config";
-import { Text_Title } from "utils/assets/landing-page/sections/about"
+import { styled, keyframes } from "src/styles/stitches.config";
+import { Text_Title } from "public/landing-page/sections/about"
 export const rotate = keyframes({
   "100%": { rotate: "360deg" },
 });
 
-const rotateBack = keyframes({
+export const rotateBack = keyframes({
   "100%": { rotate: "-360deg" },
 });
 
-const squarePath = keyframes({
-  "0%": { clipPath: "inset(0 100% 100% 0)",},
-  "100%": { clipPath: "inset(0 0 0 0)",},
+export const moveBackground = keyframes({
+  "0%": { objectPosition: "left" },
+  "50%": { objectPosition:  "right"},
+  "100%": { objectPosition: "left" },
 });
 
-const slide = keyframes({
-  "0%": { backgroundPosition: "left 100px" },
-  "50%": { backgroundPosition: "right top  100px" },
-  "100%": { backgroundPosition: "left top  100px" },
-});
+// const squarePath = keyframes({
+//   "0%": { clipPath: "inset(0 100% 100% 0)",},
+//   "100%": { clipPath: "inset(0 0 0 0)",},
+// });
+
+// const slide = keyframes({
+//   "0%": { backgroundPosition: "left 100px" },
+//   "50%": { backgroundPosition: "right top  100px" },
+//   "100%": { backgroundPosition: "left top  100px" },
+// });
 
 export const section = styled("section", {
   width: "auto",
   height: "100vh",
   position: "relative",
-  objectFit: "contain",
+  // objectFit: "contain",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -33,7 +39,11 @@ export const section = styled("section", {
 
 export const background = styled(ResponsiveImage)
 
-export const subBackground = styled("div", {
+export const cityBigImage = styled(ResponsiveImage)
+
+export const circle = styled(ResponsiveImage)
+
+export const subBackgroundWrapper = styled("div", {
   position: "absolute",
   width: "1500px",
   height: "100%",
@@ -47,6 +57,7 @@ export const subBackground = styled("div", {
   },
 });
 
+export const subBackgroundImage = styled(ResponsiveImage)
 
 export const TitleWrapper = styled("div", {
   position: "absolute",
@@ -68,11 +79,16 @@ export const TitleWrapper = styled("div", {
   },
 });
 
-export const flash = styled(ResponsiveImage)
-
-export const rotatingBackground = styled(ResponsiveImage)
+export const aidaSymbol = styled(ResponsiveImage)
 
 export const tabBackground = styled(ResponsiveImage)
+
+export const bigCircleWrapper = styled("div",{
+  position: "relative",
+  transform: "translate(50vh, 20vh)",
+  width:"120vh",
+  height:"120vh",
+})
 
 export const floatingTab = styled("article", {
   display: "flex",
@@ -81,7 +97,6 @@ export const floatingTab = styled("article", {
   backgroundSize: "100% 100%",
   justifyContent: "end",
   position: "absolute",
-  zIndex: 5,
   "& h2": {
     display: "flex",
     alignItems: "center",
@@ -132,42 +147,19 @@ export const floatingTab = styled("article", {
     justifyContent: "start",
     paddingLeft: "30px",
     paddingTop: "12px",
-    left: "140px",
+    left: "150px",
     minWidth: "300px",
     maxWidth: "330px",
     top: "40%",
-    right: "15%",
     height: "fit-content",
     marginBottom: "10px",
   },
 });
 
-export const floatingMainCircle = styled("div", {
+export const AidaDiv = styled("div", {
   position: "absolute",
   width: 100,
   height: 100,
-  zIndex: 5,
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "100% 100%",
-  transform: "translateX(70%)",
-  "&:active": {
-    "&:after": {
-      animation: `${rotate} 0.3s linear infinite`,
-      transition: "all 500ms",
-    },
-  },
-  "&:after": {
-    // animation: `${rotate} 3s infinite`,
-    backgroundImage: `url('/assets/images/page3/p3-rotate1.png')`,
-    backgroundSize: "100% 100%",
-    content: "",
-    position: "absolute",
-    top: -20,
-    left: -25,
-    width: 100,
-    height: 100,
-  },
-
   "@mobile": {
     top: "32%",
     right: "15%",
@@ -176,94 +168,14 @@ export const floatingMainCircle = styled("div", {
     right: "unset",
     left: "0px",
   },
+  "@desktop": {
+    top:"30%",
+    right: "unset",
+    left: "50px",
+  },
 });
 
-// export const rotatingCircles = styled("div", {
-//   // backgroundImage: "url('/assets/images/page3/p3-circle1.png')",
-//   // backgroundRepeat: "no-repeat",
-//   // backgroundSize: "190vw 190vw",
-//   width: "190vw",
-//   height: "190vw",
-//   position: "absolute",
-//   zIndex: 2,
-//   "&:after": {
-//     width: "190vw",
-//     height: "190vw",
-//     animation: `${rotateBack} 15s infinite`,
-//     backgroundImage: `url('/assets/images/page3/p3-circle6.png')`,
-//     backgroundSize: "100% 100%",
-//     content: "",
-//     position: "absolute",
-//   },
-//   "&:before": {
-//     width: "190vw",
-//     height: "190vw",
-//     animation: `${rotate} 30s linear infinite`,
-//     backgroundImage: `url('/assets/images/page3/p3-circle2.png')`,
-//     opacity: 0.5,
-//     backgroundSize: "100% 100%",
-//     content: "",
-//     position: "absolute",
-//   },
-//   "@mobile": {
-//     top: "23vw",
-//     left: -140,
-//   },
-//   "@tablet": {
-//     top: "21vw",
-//     left: -200,
-//   },
-//   "@desktop": {
-//     top: "unset",
-//     bottom: "0px",
-//     left: "unset",
-//     right: -300,
-//     // backgroundSize: "1100px 1100px",
-//     width: "1100px",
-//     height: "88.307%",
-//     "&:after": {
-//       width: "1100px",
-//       height: "1100px",
-//     },
-//     "&:before": {
-//       width: "1100px",
-//       height: "1100px",
-//     },
-//   },
-// });
-
-// export const movingBackground = styled("div", {
-//   zIndex: -1,
-//   // backgroundRepeat: "no-repeat",
-//   // backgroundSize: "auto 100%",
-//   position: "absolute",
-//   bottom: 0,
-//   width: "100%",
-//   height: "95%",
-//   backgroundColor: "#333",
-//   "@mobile": { 
-//     animation: `${slide} 20s infinite ease-in-out`,
-//     // backgroundSize: "auto 100%",
-//   },
-//   "@desktop": {
-//     right: "-240px",
-//     height: "85%",
-//     // backgroundSize: "100% 100%",
-//     width: "1000px",
-//     zIndex: 1,
-//     animation: "none",
-//     maskImage:`url('/assets/images/page3/mask.png')`,
-//     maskSize: "100% auto",
-//     maskRepeat:"no-repeat",
-// },
-// });
-
-
 export const bottomBackground = styled("div", {
-  // backgroundImage: "url('/assets/images/page3/p3-bottom.png')",
-  zIndex: 4,
-  // backgroundRepeat: "no-repeat",
-  // backgroundSize: "100% 190%",
   position: "absolute",
   bottom: -5,
   width: "100%",
@@ -281,28 +193,21 @@ export const bottomBackground = styled("div", {
 
 export const cityOption = styled("button", {
   borderRadius: "100%",
-  // backgroundRepeat: "no-repeat",
-  // backgroundSize: "100% 100%",
   position: "relative",
   border: "none",
   padding: 0,
   margin: 0,
-  zIndex: 5,
   transition: "all 500ms ease-in-out",
   "&:before": {
     transition: "all 500ms ease-in-out",
     content: "",
     position: "absolute",
-    // backgroundRepeat: "no-repeat",
-    // backgroundSize: "100% 100%",
   },
   "&:after": {
     transition: "all 500ms ease-in-out",
     content: "",
     position: "absolute",
     animation: `${rotateBack} 10s linear infinite`,
-    // backgroundRepeat: "no-repeat",
-    // backgroundSize: "100% 100%",
   },
   "@desktop": {
     transform: "translate(50%, 50%)",

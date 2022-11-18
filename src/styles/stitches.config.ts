@@ -1,12 +1,12 @@
-import { createStitches, createTheme } from '@stitches/react'
+import { createStitches } from '@stitches/react'
 interface IBackground {i:string , s?:string, p?:string}
-
+export const mediaSizes = {
+  mobile: '(min-width: 0px)',
+  tablet: '(min-width: 768px)',
+  desktop: '(min-width: 1024px)',
+}
 export const { styled, css, globalCss, getCssText ,keyframes ,config} = createStitches({
-    media: {
-      mobile: '(min-width: 0px)',
-      tablet: '(min-width: 768px)',
-      desktop: '(min-width: 1024px)',
-    },
+    media: mediaSizes,
     utils:{
       bgg: (value:boolean) => ({
         backgroundColor:"green" ,

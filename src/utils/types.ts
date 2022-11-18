@@ -11,7 +11,7 @@ interface StaticImageData {
 type StaticImport = { default: StaticImageData } | StaticImageData;
 
 type CommonImage = {
-  img: string | StaticImport;
+  img: string ;
   objFit?: ImgElementStyle["objectFit"];
   objPosition?: ImgElementStyle["objectPosition"];
   quality?:number;
@@ -59,4 +59,14 @@ export interface navTools {
   alt: string;
   w: number;
   h: number;
+}
+
+export interface ICities {
+  number: number;
+    title: string;
+    story: string;
+    iconImg: string;
+    cityImg: string;
+    isActive: (selected: number) => boolean;
+
 }
